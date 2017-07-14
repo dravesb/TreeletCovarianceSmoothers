@@ -1,1 +1,2 @@
-# treelets
+# TreeletCovarianceSmoothers 
+
