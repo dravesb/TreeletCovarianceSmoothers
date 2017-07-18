@@ -1,14 +1,14 @@
 treelet_decomposition = function(grm_name = NA,treetop = NA){
 	
 	#--------------------------------
-	#Check for erros in the grm file
+	#Check for errors in the grm file
 	#--------------------------------
 	
 	if(is.na(grm_name)){
 		message("please specify grm file name \n this should be in the current directory")
 		stop()
-	}
-	
+	}	
+
 	#-------------------------------------------
 	#Format the GRM file -> relationship matrix  
 	#-------------------------------------------
@@ -20,7 +20,16 @@ treelet_decomposition = function(grm_name = NA,treetop = NA){
 	A = matrix(NA, nrow = n, ncol = n)
 	A[stacked_data[,1:2]] = stacked_data[,4]
 	A[stacked_data[,2:1]] = stacked_data[,4]
-	
+
+	#----------------------------------
+	#If treetop NA, set it to max level
+	#----------------------------------
+
+	if(is.na(treetop)){
+		message("setting the tree level to the maximum possible value (n - 1)")
+		treetop = n - 1
+	}	
+
 	#-------------------------------------------
 	# Initial correlation values
 	#-------------------------------------------
@@ -48,14 +57,14 @@ treelet_decomposition = function(grm_name = NA,treetop = NA){
 		
 		#print out progress 
 		if(lev %% 100 == 0 ){
-    		print(paste("Computing level:",lev))
-    	}
+    			print(paste("Computing level:",lev))
+    		}
 		
 		#mask_M <- matrix to find hightest pairwise relatedness
 		mask_M = upper.tri(M) * M
 		
 		#set non - applicable entries to -1  
-		mask_M[lower.tri(mask_M, diag = TRUE)] = mask_M[merged_indices, ] = mask_M[, merged_indices] = -1 
+		mask_M[which(mask_M == 0, arr.ind = TRUE)] = mask_M[merged_indices, ] = mask_M[, merged_indices] = -1 
 		
 		#find highest related pair 
 		alpha_beta = which(mask_M == max(mask_M), arr.ind = TRUE)[1,]
@@ -107,14 +116,19 @@ treelet_decomposition = function(grm_name = NA,treetop = NA){
 		}
 		
 		#record which individuals were merged 
-		merges[lev, ] = alpha_beta
+		merges[lev, ] = clusters[alpha_beta]
 		
 		#order the PC indicies & store the cluster names
 		princ_component_index = alpha_beta[index]
-		clusters[alpha_beta] = cbind(n + lev, 0) 
+		clusters[princ_component_index] = cbind(n + lev, 0) 
 		
 		#update merged_indicies
-		merged_indices = ifelse(lev == 1, as.matrix(princ_component_index[2]), cbind(merged_indices,princ_component_index[2]))
+		if(lev == 1){
+			merged_indices = as.matrix(princ_component_index[2])
+		} else{
+			merged_indices = cbind(merged_indices,princ_component_index[2])
+		}
+
 		
 		#record PC ratio
 		pc_ratio[lev] =  A[princ_component_index[2], princ_component_index[2]]/A[princ_component_index[1], princ_component_index[1]]
@@ -136,18 +150,37 @@ treelet_decomposition = function(grm_name = NA,treetop = NA){
 	V = t(basis)
 	G = as.matrix(A)
 	sum_indices = which(clusters != 0)
-
+	
 	full_A = V %*% G %*% t(V) 
-	sum_A = V[,sum_indices] %*% G[sum_indices, sum_indices] %*% t(V[,sum_indices])
+	
+	if(treetop == n-1){
+		sum_A = V[,sum_indices] %*% as.matrix( G[sum_indices, sum_indices] * t(V[,sum_indices]))
+
+	}else{
+		sum_A = V[,sum_indices] %*% G[sum_indices, sum_indices] %*% t(V[,sum_indices])
+	}
+	
 	
 	#-------------------------------------------
 	# Package object
 	#-------------------------------------------
+	
+	tree = function(full, sum, s_indices, cs){
+		#Set the value
+		value = list(full_basis_matrix = full, sum_basis_matrix = sum, merge_indices = s_indices, cluster_paths = cp)
 		
+		#Set the class
+		attr(value, "class") = "tree"
+		value 
+	}	
 	
+	obj = tree(full_A, sum_A, merged_indices,clusters_by_iteration)
+
+	#-------------------------------------------
+	# Return the object 
+	#-------------------------------------------
 	
-	
-	
+	return(obj)
 	
 }
 
