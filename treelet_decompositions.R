@@ -165,7 +165,7 @@ treelet_decomposition = function(grm_name = NA,treetop = NA){
 	# Package object
 	#-------------------------------------------
 	
-	tree = function(full, sum, s_indices, cs){
+	treelet_covariance_smoother = function(full, sum, s_indices, cs){
 		#Set the value
 		value = list(full_basis_matrix = full, sum_basis_matrix = sum, merge_indices = s_indices, cluster_paths = cp)
 		
@@ -174,7 +174,7 @@ treelet_decomposition = function(grm_name = NA,treetop = NA){
 		value 
 	}	
 	
-	obj = tree(full_A, sum_A, merged_indices,clusters_by_iteration)
+	obj = treelet_covariance_smoother(full_A, sum_A, merged_indices,clusters_by_iteration)
 
 	#-------------------------------------------
 	# Return the object 
