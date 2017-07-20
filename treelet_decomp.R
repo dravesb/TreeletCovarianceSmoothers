@@ -69,7 +69,6 @@ treelet_decomp = function(grm_name = NA,treetop = NA){
 		mask_M = M
 		
 		#set non - applicable entries to -1  
-		#mask_M[which(mask_M == 0, arr.ind = TRUE)] = mask_M[merged_indices, ] = mask_M[, merged_indices] = -1 
 		mask_M[upper.tri(M, diag = TRUE)] = mask_M[merged_indices, ] = mask_M[, merged_indices] = -1 
 
 		#find highest related pair 
