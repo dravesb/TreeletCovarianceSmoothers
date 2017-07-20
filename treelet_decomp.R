@@ -66,11 +66,12 @@ treelet_decomp = function(grm_name = NA,treetop = NA){
     		}
 		
 		#mask_M <- matrix to find hightest pairwise relatedness
-		mask_M = upper.tri(M) * M
+		mask_M = M
 		
 		#set non - applicable entries to -1  
-		mask_M[which(mask_M == 0, arr.ind = TRUE)] = mask_M[merged_indices, ] = mask_M[, merged_indices] = -1 
-		
+		#mask_M[which(mask_M == 0, arr.ind = TRUE)] = mask_M[merged_indices, ] = mask_M[, merged_indices] = -1 
+		mask_M[upper.tri(M, diag = TRUE)] = mask_M[merged_indices, ] = mask_M[, merged_indices] = -1 
+
 		#find highest related pair 
 		alpha_beta = which(mask_M == max(mask_M), arr.ind = TRUE)[1,]
 		

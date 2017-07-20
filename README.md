@@ -1,3 +1,1 @@
 # TreeletCovarianceSmoothers
-
-Currently in development... 
