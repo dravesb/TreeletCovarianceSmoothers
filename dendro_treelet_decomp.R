@@ -1,19 +1,23 @@
-dendro_treelet_decomp = function(grm_name = NA, num_clusters = NA){	
+dendro = function(tree = NA, num_clusters = NA, grm_name = NA){		
 	
-	#--------------------------------------------------
-	# get full treelet object
-	#--------------------------------------------------
-	message("getting the treelet_decomp object")
-	
-	tree = treelet_decomp(grm_name)
-	
+
 	#--------------------------------------------------
 	# unpack treelet_decomp object
 	#--------------------------------------------------
 
 	merges = tree$merges 
 	treetop = tree$level
-	
+		
+
+	#--------------------------------------------------
+	# check to make sure the tree is full
+	#--------------------------------------------------
+
+	if(treetop != nrow(tree$G)-1){
+		message("the treelet decomposition needs to be complete (n-1) to use this visualization")
+		stop()
+	}
+
 	#--------------------------------------------------
 	# set num_clusters
 	#--------------------------------------------------
