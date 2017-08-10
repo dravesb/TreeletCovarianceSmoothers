@@ -76,9 +76,9 @@ treelet_prep_cv = funtion(grm_name, no_cores = NA, num_test = 50){
 
 	#make the call to gcta 
 
-	result = foreach(i=1:no_test)%dopar%{
+	result = foreach(i=1:num_test)%dopar%{
 		
-		#format snp file names
+		#format snp file names3
 		snp_file = paste(getwd(), "/snp_sets/test",i, sep = "")
 		out = paste(getwd(), "/cv_grms/train", sep = "")	
 	}
