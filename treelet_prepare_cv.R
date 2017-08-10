@@ -68,18 +68,30 @@ treelet_prep_cv = funtion(grm_name, no_cores = NA, num_test = 50){
 	setwd("..")
 	
 	#--------------------------------
-	#Make training and testing grms
+	#Make training grms
 	#--------------------------------
 	
 	#create directory for the new grms
 	dir.create("./cv_grms", showWarnings = FALSE)
 
 	#make the call to gcta 
+
+	result = foreach(i=1:no_test)%dopar%{
+		
+		#format snp file names
+		snp_file = paste(getwd(), "/snp_sets/test",i, sep = "")
+		out = paste(getwd(), "/cv_grms/train", sep = "")	
+	}
+
 	
-	snp_file = paste(getwd(), "/snp_sets/train", sep = "")
-	out = paste(getwd(), "/cv_grms/train", sep = "")
+	
 	
 	system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out "sep = ""))
+	
+	
+	#--------------------------------
+	#Make testing grms
+	#--------------------------------
 
 	
 	
