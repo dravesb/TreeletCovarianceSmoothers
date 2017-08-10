@@ -1,0 +1,6025 @@
+1 - .05/12
+1 - .05/1
+.028 + .053
+.028/.081
+.023/.081
+.028 + .023
+.023/.051
+.028/.051
+-.051 + .028
+-.051 + .023
+44/42
+44/14
+44/2
+4*22
+log(1/8)/3000000
+log(1/8)/3
+-log(1/8)/3
+exp(-.7*10)
+exp(-.7*10000000)
+exp(-.7*2000000)
+exp(-.7*2)
+exp(-.7*10)
+exp(-.7*3)
+exp(-0.6931472*3)
+trial_numbers = c(50,100,500,1000,10000,50000)#
+total_dist = matrix(NA, nrow = length(trial_numbers), ncol=3)#
+colnames(total_dist) = c("MH", "Slice", "MMH")#
+rownames(total_dist) <- as.character(trial_numbers)
+total-dist
+total_dist
+6/512
+7548 * 4495
+9058 * 5394
+8303 * 4944
+7548 * 4495
+9008 * 5842
+8107 * 5257
+7207 * 4673
+6912 * 4631
+7200 * 4800
+#-------------------------------------------------------------------------------------------#
+##
+#					Initialize Master Matrix #
+##
+#-------------------------------------------------------------------------------------------#
+#
+master=matrix(0,40,24)#
+master[1,1:3]=1#
+master[1,4:6]=1500#
+master[2,8]=60#
+master[4,8]=60#
+master[6,8]=200#
+master[7,8]=100#
+master[9,8]=100#
+master[10,8]=120#
+master[12,8]=140#
+master[13,8]=150#
+master[14,8]=140#
+master[15,8]=160#
+master[16,8]=200#
+master[17,8]=180#
+master[19,8]=180#
+master[20,8]=200#
+master[22,8]=220#
+master[24,8]=220#
+master[25,8]=240#
+master[26,8]=200#
+master[27,8]=260#
+master[28,8]=260#
+master[29,8]=150#
+master[30,8]=280#
+master[32,8]=300#
+master[33,8]=300#
+master[35,8]=320#
+master[36,8]=200#
+master[38,8]=350#
+master[40,8]=400#
+master[2,9]=1#
+master[4,9]=1#
+master[7,9]=2#
+master[9,9]=2#
+master[10,9]=2#
+master[11,9]=9#
+master[12,9]=3#
+master[14,9]=3#
+master[15,9]=3#
+master[17,9]=4#
+master[19,9]=4#
+master[20,9]=4#
+master[22,9]=5#
+master[24,9]=5#
+master[25,9]=5#
+master[27,9]=6#
+master[28,9]=6#
+master[30,9]=6#
+master[31,9]=9#
+master[32,9]=7#
+master[33,9]=7#
+master[35,9]=7#
+master[38,9]=8#
+master[40,9]=8#
+master[6,9]=10#
+master[16,9]=10#
+master[26,9]=10#
+master[36,9]=10#
+master[2,10]=2#
+master[4,10]=4#
+master[5,10]=200#
+master[6,10]=25#
+master[7,10]=6#
+master[9,10]=6#
+master[10,10]=8#
+master[12,10]=10#
+master[14,10]=10#
+master[15,10]=12#
+master[16,10]=25#
+master[17,10]=14#
+master[19,10]=14#
+master[20,10]=16#
+master[22,10]=18#
+master[24,10]=20#
+master[25,10]=20#
+master[26,10]=25#
+master[27,10]=22#
+master[28,10]=22#
+master[30,10]=24#
+master[32,10]=26#
+master[33,10]=26#
+master[35,10]=28#
+master[36,10]=25#
+master[38,10]=35#
+master[39,10]=75#
+master[40,10]=50#
+master[2,11]=10#
+master[4,11]=20#
+master[7,11]=30#
+master[9,11]=30#
+master[10,11]=40#
+master[12,11]=50#
+master[14,11]=50#
+master[15,11]=60#
+master[17,11]=70#
+master[19,11]=70#
+master[20,11]=80#
+master[22,11]=90#
+master[24,11]=90#
+master[25,11]=100#
+master[27,11]=110#
+master[28,11]=110#
+master[30,11]=120#
+master[32,11]=130#
+master[33,11]=130#
+master[35,11]=150#
+master[38,11]=175#
+master[40,11]=200#
+master[2,12]=30#
+master[4,12]=60#
+master[7,12]=90#
+master[9,12]=90#
+master[10,12]=100#
+master[12,12]=150#
+master[14,12]=150#
+master[15,12]=180#
+master[17,12]=200#
+master[19,12]=200#
+master[20,12]=220#
+master[22,12]=250#
+master[24,12]=250#
+master[25,12]=300#
+master[27,12]=330#
+master[28,12]=330#
+master[30,12]=360#
+master[32,12]=390#
+master[33,12]=390#
+master[35,12]=450#
+master[38,12]=500#
+master[40,12]=600#
+master[2,13]=90#
+master[4,13]=180#
+master[7,13]=270#
+master[9,13]=270#
+master[10,13]=300#
+master[12,13]=450#
+master[14,13]=450#
+master[15,13]=500#
+master[17,13]=550#
+master[19,13]=550#
+master[20,13]=600#
+master[22,13]=700#
+master[24,13]=700#
+master[25,13]=750#
+master[27,13]=800#
+master[28,13]=800#
+master[30,13]=850#
+master[32,13]=900#
+master[33,13]=900#
+master[35,13]=1000#
+master[38,13]=1100#
+master[40,13]=1400#
+master[2,14]=160#
+master[4,14]=320#
+master[7,14]=400#
+master[9,14]=400#
+master[10,14]=450#
+master[12,14]=625#
+master[14,14]=625#
+master[15,14]=700#
+master[17,14]=750#
+master[19,14]=750#
+master[20,14]=800#
+master[22,14]=875#
+master[24,14]=875#
+master[25,14]=925#
+master[27,14]=975#
+master[28,14]=975#
+master[30,14]=1025#
+master[32,14]=1100#
+master[33,14]=1100#
+master[35,14]=1200#
+master[38,14]=1300#
+master[40,14]=1700#
+master[2,15]=250#
+master[4,15]=450#
+master[7,15]=550#
+master[9,15]=550#
+master[10,15]=600#
+master[12,15]=750#
+master[14,15]=750#
+master[15,15]=900#
+master[17,15]=950#
+master[19,15]=950#
+master[20,15]=1000#
+master[22,15]=1050#
+master[24,15]=1050#
+master[25,15]=1100#
+master[27,15]=1150#
+master[28,15]=1150#
+master[30,15]=1200#
+master[32,15]=1275#
+master[33,15]=1275#
+master[35,15]=1400#
+master[38,15]=1500#
+master[40,15]=2000#
+master[2,17]=50#
+master[4,17]=50#
+master[7,17]=50#
+master[9,17]=50#
+master[10,17]=50#
+master[12,17]=100#
+master[14,17]=100#
+master[15,17]=100#
+master[17,17]=100#
+master[19,17]=100#
+master[20,17]=100#
+master[22,17]=150#
+master[24,17]=150#
+master[25,17]=150#
+master[27,17]=150#
+master[28,17]=150#
+master[30,17]=150 #
+master[32,17]=200#
+master[33,17]=200#
+master[35,17]=200#
+master[38,17]=200#
+master[40,17]=200#
+master[2,18]=200#
+master[4,18]=200#
+master[7,18]=200#
+master[9,18]=200#
+master[10,18]=200#
+master[12,18]=400#
+master[14,18]=400#
+master[15,18]=400#
+master[17,18]=400#
+master[19,18]=400#
+master[20,18]=400#
+master[22,18]=600#
+master[24,18]=600#
+master[25,18]=600#
+master[27,18]=600#
+master[28,18]=600#
+master[30,18]=600#
+master[32,18]=800#
+master[33,18]=800#
+master[35,18]=800#
+master[38,18]=800#
+master[40,18]=800
+loser=0#
+results=numeric(10000)
+loser
+results
+numbergame = 1
+if(numbergame %% 10==0){#
+	print(paste("we're on game:", numbergame))#
+}
+#Each round of each game	#
+for(p in 1:3){#
+#variables##
+freeparking=0#
+h=1*sum(master[,16]==1) + 2*sum(master[,16]==2) + 3*sum(master[,16]==3) + 4*sum(master[,16]==4)#
+H=sum(master[,16]==5)#
+r_1=0#
+r_2=0#
+numdubs=0#
+#
+community_chest = sample(1:16)#
+communitychest=rep(community_chest,10)#
+#
+chance_ = sample(1:16)#
+chance = rep(chance_,10)#
+#
+roll=sample(1:6, 2, replace=TRUE) #
+move=(roll[1]+roll[2])#
+doubles=(roll[1]==roll[2]) #
+#
+while(doubles>0){#
+numdubs=numdubs+doubles#
+#
+if(numdubs==3) {#
+  master[1,p] = 11#
+	master[1,p+18]==3#
+} else {#
+	master[1,p] = master[1,p] +move#
+if (p==3){#
+if ((master[27,7]==3) && (master[28,7]==3) && (master[30,7]==3)){#
+if ((master[27,16]==0) && (master[28,16]==0) && (master[30,16]==0)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==1) && (master[28,16]==1) && (master[30,16]==1)}}#
+if ((master[27,16]==1) && (master[28,16]==1) && (master[30,16]==1)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==2) && (master[28,16]==2) && (master[30,16]==2)}}#
+if ((master[27,16]==2) && (master[28,16]==2) && (master[30,16]==2)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==3) && (master[28,16]==3) && (master[30,16]==3)}}#
+if ((master[27,16]==3) && (master[28,16]==3) && (master[30,16]==3)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==4) && (master[28,16]==4) && (master[30,16]==4)}}#
+if ((master[27,16]==4) && (master[28,16]==4) && (master[30,16]==4)){#
+	if (master[1,6]-500>(master[27,18]+master[28,18]+master[30,18])){#
+		master[1,6]==master[1,6]-(master[27,18]+master[28,18]+master[30,18])#
+		(master[27,16]==5) && (master[28,16]==5) && (master[30,16]==5)}}}#
+if ((master[32,7]==3) && (master[33,7]==3) && (master[35,7]==3)){#
+if ((master[32,16]==0) && (master[33,16]==0) && (master[35,16]==0)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==1) && (master[33,16]==1) && (master[35,16]==1)}}#
+if ((master[32,16]==1) && (master[33,16]==1) && (master[35,16]==1)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==2) && (master[33,16]==2) && (master[35,16]==2)}}#
+if ((master[32,16]==2) && (master[33,16]==2) && (master[35,16]==2)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==3) && (master[33,16]==3) && (master[35,16]==3)}}#
+if ((master[32,16]==3) && (master[33,16]==3) && (master[35,16]==3)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==4) && (master[33,16]==4) && (master[35,16]==4)}}#
+if ((master[32,16]==4) && (master[33,16]==4) && (master[35,16]==4)){#
+	if (master[1,6]-500>(master[32,18]+master[33,18]+master[35,18])){#
+		master[1,6]==master[1,6]-(master[32,18]+master[33,18]+master[35,18])#
+		(master[32,16]==5) && (master[33,16]==5) && (master[35,16]==5)}}}}	#
+	if (master[1,p]>40){#
+	master[1,p]=master[1,p]-40#
+	master[1,p+3]=master[1,p+3]+200}#
+	if (master[1,p]==2) {#
+		###PLAYER 1#########
+if (p==1){#
+if (master[2,7]==0){#
+		if (master[1,p+3]>master[2,8]){#
+			master[1,p+3]==master[1,p+3]-master[2,8]#
+			master[2,7]==1}}}#
+	###PLAYER 2/3#########
+#
+	if (p>1){#
+		if (master[2,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[2,10]#
+			master[1,4]==master[1,4]+master[2,10]}}}#
+if(master[1,p] %in% c(3,18,34)){#
+  card = communitychest[1]#
+  communitychest=communitychest[-1]#
+if (card==1){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==2){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==3){#
+  master[1,p+3]=master[1,p+3]+45}#
+if (card==4){#
+  master[1,p+3]=master[1,p+3]+200}#
+if (card==5){#
+  master[1,p+3]=master[1,p+3]-100#
+freeparking=freeparking+100}#
+if (card==6){#
+  master[1,p+3]=master[1,p+3]-50#
+freeparking=freeparking+50}#
+if (card==7){master[1,p+21]=master[1,p+21]+1#
+  }#
+if (card==8){#
+  master[1,p+3]=master[1,p+3]+25}#
+if (card==9){#
+  master[1,p+3]=master[1,p+3]-150#
+freeparking=freeparking+150}#
+if (card==10){#
+  master[1,p]=1#
+  master[1,p+3]=master[1,p+3]+200}#
+if (card==11){#
+  master[1,p+3]=master[1,p+3]+10}#
+if (card==12){#
+  master[1,p+3]=master[1,p+3]+150#
+if (card==13){#
+  master[1,p+3]=master[1,p+3]+20}#
+if (card==14){master[1,p+3]=master[1,p+3]-40*h-115*H#
+	freeparking=freeparking+40*h+115*H#
+  }#
+if (card==15){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==16){#
+  master[1,p]=11#
+  master[1,p+18]=3}#
+}}#
+if (master[1,p]==4) {#
+	###PLAYER 1#########
+#
+if (p==1){#
+if (master[4,7]==0){#
+		if (master[1,p+3]>master[4,8]){#
+			master[1,p+3]==master[1,p+3]-master[4,8]#
+			master[4,7]==1}}}#
+			###PLAYER 2/3#########
+#
+	if ( p>1){#
+		if (master[4,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[4,10]#
+			master[1,4]==master[1,4]+master[4,10]}}}#
+if (master[1,p]==5){#
+	master[1,p+3]==master[1,p+3]-200#
+freeparking=freeparking+200}#
+if (master[1,p]==6) {#
+	###PLAYER 1#########
+	if (p==1){#
+if (master[6,7]==0){#
+		if (master[1,p+3]>master[6,8]){#
+			master[1,p+3]==master[1,p+3]-master[6,8]#
+			master[6,7]==1#
+r_1=1}}#
+		if (master[6,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+		###PLAYER 2#########
+	if (p==2){#
+		if (master[6,7]==0){#
+		if (master[1,p+3]>master[6,8]){#
+			master[1,p+3]==master[1,p+3]-master[6,8]#
+			master[6,7]==2#
+r_2=1}}#
+		if (master[6,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+###PLAYER 3#########
+	if (p==3){#
+		if (master[6,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[6,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+if (master[1,p]==7) {#
+if (p==1){#
+if (master[7,7]==0){#
+		if (master[1,p+3]>master[7,8]){#
+			master[1,p+3]==master[1,p+3]-master[7,8]#
+			master[7,7]==1}}}#
+	if ( p>1){#
+		if (master[7,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[7,10]#
+			master[1,4]==master[1,4]+master[7,10]}}}#
+if (master[1,p] %in% c(8,37,23)){#
+card = chance[1]#
+chance=chance[-1]#
+ if (card==1){#
+   master[1,p]=1#
+   master[1,p+3] = master[1,p+3]+200}#
+ if (card==2){#
+   master[1,p+3]=master[1,p+3]+50}#
+ if (card==3){#
+   master[1,p]=11#
+   master[1,p+18]=3}#
+ if (card==4){#
+   master[1,p+3]=master[1,p+3]-150#
+        	master[1,4]=master[1,4]+50#
+        	master[1,5]=master[1,5]+50#
+master[1,6]=master[1,6]+50}#
+ if (card==5){#
+if (master[1,p] %in% c(37:40,1:6)) {master[1,p]=6#
+        	if (master[6,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[6,7]==2){#
+        	{master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(7:16))#
+{master[1,p]==16#
+        	if (master[16,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[16,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(17:26))#
+{master[1,p]=26#
+        	if (master[26,7]==1){#
+        	{{master[1,4]={master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[26,7]==2){#
+        	{{master[1,5]={master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(27:36))#
+{master[1,p]=36#
+        	if (master[36,7]==1){#
+        	master[1,4]={master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[36,7]==5){#
+        	master[1,5]={master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}#
+        	}#
+ if (card==6){master[1,p]=25}#
+ if (card==7){master[1,p]=master[1,p]-3}#
+ if (card==8){master[1,p+3]=master[1,p+3]-15#
+freeparking=freeparking+15}#
+ if (card==9){#
+if (master[1,p] %in% c(37:40,1:6)) {master[1,p]=6#
+        	if (master[6,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}}#
+        	if (master[6,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(7:16))#
+{master[1,p]==16#
+        	if (master[16,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[16,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(17:26))#
+{master[1,p]=26#
+        	if (master[26,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[26,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(27:36))#
+{master[1,p]=36#
+        	if (master[36,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[36,7]==5){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+ if (card==10){master[1,p]=40}#
+ if (card==11){#
+master[1,p+21]=master[1,p+21]+1}#
+ if (card==12){#
+if (master[1,p] %in% c(29:40,1:13))#
+{master[1,p]==13}#
+if (master[13,7]==1){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,4]=master[1,4]+(10*roll)}#
+if (master[13,7]==2){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,5]=master[1,5]+(10*roll)}#
+if (master[1,p] %in% c(13:29)){#
+master[1,p]=29}#
+if (master[29,7]==1){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,4]=master[1,4]+(10*roll)}#
+if (master[29,7]==2){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,5]=master[1,5]+(10*roll)}}#
+ if (card==13){master[1,p]=12}#
+ if (card==14){master[1,p]=6}#
+ if (card==15){master[1,p+3]=master[1,p+3]+150}#
+ if (card==16){master[1,p+3]=master[1,p+3]-25*h-100*H#
+freeparking=25*h+100*H}#
+}}}}}}}}}}}}}}#
+if (master[1,p]==9) {#
+if (p==1){#
+if (master[9,7]==0){#
+		if (master[1,p+3]>master[9,8]){#
+			master[1,p+3]==master[1,p+3]-master[9,8]#
+			master[9,7]==1}}}#
+	if (p>1){#
+		if (master[9,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[9,10]#
+			master[1,4]==master[1,4]+master[9,10]}}}#
+if (master[1,p]==10) {#
+if (p==1){#
+if (master[10,7]==0){#
+		if (master[1,p+3]>master[10,8]){#
+			master[1,p+3]==master[1,p+3]-master[10,8]#
+			master[10,7]==1}}}#
+	if (p>1){#
+		if (master[10,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[10,10]#
+			master[1,4]==master[1,4]+master[10,10]}}}#
+if (master[1,p]==11 && (master[1,p+18]==0)) { #
+	if (doubles==1){#
+		master[1,p+18]=0#
+master[1,p]==master[1,p]+move}#
+	if (doubles==0){#
+	master[1,p+18]==master[1,p+18]-1#
+master[1,p]==11}#
+}	#
+if (master[1,p]==12) {#
+if (p==1){#
+if (master[12,7]==0){#
+		if (master[1,p+3]>master[12,8]){#
+			master[1,p+3]==master[1,p+3]-master[12,8]#
+			master[12,7]==1}}}#
+	if (p>1){#
+		if (master[12,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[12,10]#
+			master[1,4]==master[1,4]+master[12,10]}}}#
+if (master[1,p]==13){#
+	if (master[13,7]==0){#
+		if (master[1,p+3]>master[13,8]){#
+			master[1,p+3]==master[1,p+3]-master[13,8]#
+			master[13,7]==1}}#
+	if (master[13,7]>0){#
+		if (master[13,7]==2){#
+			if (master[29,7]==2){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,5]==master[1,5]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,5]==master[1,5]+(4*roll)}}#
+		if (master[13,7]==3){#
+			if (master[29,7]==3){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,6]==master[1,6]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,6]==master[1,6]+(4*roll)}}}#
+#
+if (master[1,p]==14) {#
+if (p==1){#
+if (master[14,7]==0){#
+		if (master[1,p+3]>master[14,8]){#
+			master[1,p+3]==master[1,p+3]-master[14,8]#
+			master[14,7]==1}}}#
+	if (p>1){#
+		if (master[14,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[14,10]#
+			master[1,4]==master[1,4]+master[14,10]}}}#
+if (master[1,p]==15) {#
+if (p==1){#
+if (master[15,7]==0){#
+		if (master[1,p+3]>master[15,8]){#
+			master[1,p+3]==master[1,p+3]-master[15,8]#
+			master[15,7]==1}}}#
+	if (p>1){#
+		if (master[15,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[15,10]#
+			master[1,4]==master[1,4]+master[15,10]}}}#
+if (master[1,p]==16) {#
+	if (p==1){#
+if (master[16,7]==0){#
+		if (master[1,p+3]>master[16,8]){#
+			master[1,p+3]==master[1,p+3]-master[16,8]#
+			master[16,7]==1#
+r_1=1}}#
+		if (master[16,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[16,7]==0){#
+		if (master[1,p+3]>master[16,8]){#
+			master[1,p+3]==master[1,p+3]-master[16,8]#
+			master[16,7]==2#
+r_2=1}}#
+		if (master[16,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+if (master[1,p]==17) {#
+if (p==1){#
+if (master[17,7]==0){#
+		if (master[1,p+3]>master[17,8]){#
+			master[1,p+3]==master[1,p+3]-master[17,8]#
+			master[17,7]==1}}}#
+	if (p>1){#
+		if (master[17,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[17,10]#
+			master[1,4]==master[1,4]+master[17,10]}}}#
+#
+if (master[1,p]==19) {#
+if (p==1){#
+if (master[19,7]==0){#
+		if (master[1,p+3]>master[19,8]){#
+			master[1,p+3]==master[1,p+3]-master[19,8]#
+			master[19,7]==1}}}#
+	if (p>1){#
+		if (master[19,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[19,10]#
+			master[1,4]==master[1,4]+master[19,10]}}}#
+if (master[1,p]==20) {#
+if (p==1){#
+if (master[20,7]==0){#
+		if (master[1,p+3]>master[20,8]){#
+			master[1,p+3]==master[1,p+3]-master[20,8]#
+			master[20,7]==1}}}#
+	if (p>1){#
+		if (master[20,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[20,10]#
+			master[1,4]==master[1,4]+master[20,10]}}}#
+if (master[1,p]==21){#
+	master[1,p+3]=master[1,p+3]+freeparking}#
+if (master[1,p]==22) {#
+if (p==1){#
+if (master[22,7]==0){#
+		if (master[1,p+3]>master[22,8]){#
+			master[1,p+3]==master[1,p+3]-master[22,8]#
+			master[22,7]==1}}}#
+	if (p>1){#
+		if (master[22,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[22,10]#
+			master[1,4]==master[1,4]+master[22,10]}}}#
+#
+if (master[1,p]==24) {#
+if (p==1){#
+if (master[24,7]==0){#
+		if (master[1,p+3]>master[24,8]){#
+			master[1,p+3]==master[1,p+3]-master[24,8]#
+			master[24,7]==1}}}#
+	if (p>1){#
+		if (master[24,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[24,10]#
+			master[1,4]==master[1,4]+master[24,10]}}}#
+if (master[1,p]==25) {#
+if (p==1){#
+if (master[25,7]==0){#
+		if (master[1,p+3]>master[25,8]){#
+			master[1,p+3]==master[1,p+3]-master[25,8]#
+			master[25,7]==1}}}#
+	if (p>1){#
+		if (master[25,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[25,10]#
+			master[1,4]==master[1,4]+master[25,10]}}}#
+if (master[1,p]==26) {#
+	if (p==1){#
+if (master[26,7]==0){#
+		if (master[1,p+3]>master[26,8]){#
+			master[1,p+3]==master[1,p+3]-master[26,8]#
+			master[26,7]==1#
+r_1=1}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[26,7]==0){#
+		if (master[1,p+3]>master[26,8]){#
+			master[1,p+3]==master[1,p+3]-master[26,8]#
+			master[26,7]==2#
+r_2=1}}#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+if (master[1,p]==27) {#
+if (p==1){#
+if (master[27,7]==0){#
+		if (master[1,p+3]>master[27,8]){#
+			master[1,p+3]==master[1,p+3]-master[27,8]#
+			master[27,7]==1}}#
+	if (master[27,7]==3){#
+		if (master[27,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[27,10]#
+				master[1,6]==master[1,6]+master[27,10]}#
+			if (master[27,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[27,11]#
+				master[1,6]==master[1,6]+master[27,11]}#
+			if (master[27,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[27,12]#
+				master[1,6]==master[1,6]+master[27,12]}#
+			if (master[27,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[27,13]#
+				master[1,6]==master[1,6]+master[27,13]}#
+			if (master[27,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+			if (master[27,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+if (p==3){#
+if (master[27,7]==0){#
+		if (master[1,p+3]>master[27,8]){#
+			master[1,p+3]==master[1,p+3]-master[27,8]#
+			master[27,7]==1}}#
+	if (master[27,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[27,10]#
+			master[1,6]==master[1,6]+master[27,10]}}#
+	if (p==2){#
+if (master[27,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[27,10]#
+			master[1,4]==master[1,4]+master[27,10]}#
+		if (master[27,7]==3){#
+			if (master[27,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[27,10]#
+				master[1,6]==master[1,6]+master[27,10]}#
+			if (master[27,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[27,11]#
+				master[1,6]==master[1,6]+master[27,11]}#
+			if (master[27,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[27,12]#
+				master[1,6]==master[1,6]+master[27,12]}#
+			if (master[27,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[27,13]#
+				master[1,6]==master[1,6]+master[27,13]}#
+			if (master[27,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+			if (master[27,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[27,15]#
+				master[1,6]==master[1,6]+master[27,15]}}}}}}#
+if (master[1,p]==28) {#
+if (p==1){#
+if (master[28,7]==0){#
+		if (master[1,p+3]>master[28,8]){#
+			master[1,p+3]==master[1,p+3]-master[28,8]#
+			master[28,7]==1}}#
+	if (master[28,7]==3){#
+		if (master[28,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[28,10]#
+				master[1,6]==master[1,6]+master[28,10]}#
+			if (master[28,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[28,11]#
+				master[1,6]==master[1,6]+master[28,11]}#
+			if (master[28,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[28,12]#
+				master[1,6]==master[1,6]+master[28,12]}#
+			if (master[28,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[28,13]#
+				master[1,6]==master[1,6]+master[28,13]}#
+			if (master[28,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[28,14]#
+				master[1,6]==master[1,6]+master[28,14]}#
+			if (master[28,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[28,15]#
+				master[1,6]==master[1,6]+master[28,15]}#
+if (p==3){#
+if (master[28,7]==0){#
+		if (master[1,p+3]>master[28,8]){#
+			master[1,p+3]==master[1,p+3]-master[28,8]#
+			master[28,7]==1}}#
+	if (master[28,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[28,10]#
+			master[1,6]==master[1,6]+master[28,10]}}#
+	if (p==2){#
+if (master[28,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[28,10]#
+			master[1,4]==master[1,4]+master[28,10]}#
+		if (master[28,7]==3){#
+			if (master[28,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[28,10]#
+				master[1,6]==master[1,6]+master[28,10]}#
+			if (master[28,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[28,11]#
+				master[1,6]==master[1,6]+master[28,11]}#
+			if (master[28,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[28,12]#
+				master[1,6]==master[1,6]+master[28,12]}#
+			if (master[28,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[28,13]#
+				master[1,6]==master[1,6]+master[28,13]}#
+			if (master[28,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[28,14]#
+				master[1,6]==master[1,6]+master[28,14]}#
+			if (master[28,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[28,15]#
+				master[1,6]==master[1,6]+master[28,15]}}}}}}#
+if (master[1,p]==29){#
+	if (master[29,7]==0){#
+		if (master[1,p+3]>master[29,8]){#
+			master[1,p+3]==master[1,p+3]-master[29,8]#
+			master[29,7]==1}}#
+	if (master[29,7]>0){#
+		if (master[29,7]==2){#
+			if (master[29,7]==2){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,5]==master[1,5]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,5]==master[1,5]+(4*roll)}}#
+		if (master[29,7]==3){#
+			if (master[29,7]==3){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,6]==master[1,6]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,6]==master[1,6]+(4*roll)}}}}#
+#
+if (master[1,p]==30) {#
+if (p==1){#
+if (master[30,7]==0){#
+		if (master[1,p+3]>master[30,8]){#
+			master[1,p+3]==master[1,p+3]-master[30,8]#
+			master[30,7]==1}}#
+	if (master[30,7]==3){#
+		if (master[30,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[30,10]#
+				master[1,6]==master[1,6]+master[30,10]}#
+			if (master[30,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[30,11]#
+				master[1,6]==master[1,6]+master[30,11]}#
+			if (master[30,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[30,12]#
+				master[1,6]==master[1,6]+master[30,12]}#
+			if (master[30,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[30,13]#
+				master[1,6]==master[1,6]+master[30,13]}#
+			if (master[30,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[30,14]#
+				master[1,6]==master[1,6]+master[30,14]}#
+			if (master[30,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[30,15]#
+				master[1,6]==master[1,6]+master[30,15]}#
+if (p==3){#
+if (master[30,7]==0){#
+		if (master[1,p+3]>master[30,8]){#
+			master[1,p+3]==master[1,p+3]-master[30,8]#
+			master[30,7]==1}}#
+	if (master[30,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[30,10]#
+			master[1,6]==master[1,6]+master[30,10]}}#
+	if (p==2){#
+if (master[30,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[30,10]#
+			master[1,4]==master[1,4]+master[30,10]}#
+		if (master[30,7]==3){#
+			if (master[30,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[30,10]#
+				master[1,6]==master[1,6]+master[30,10]}#
+			if (master[30,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[30,11]#
+				master[1,6]==master[1,6]+master[30,11]}#
+			if (master[30,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[30,12]#
+				master[1,6]==master[1,6]+master[30,12]}#
+			if (master[30,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[30,13]#
+				master[1,6]==master[1,6]+master[30,13]}#
+			if (master[30,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[30,14]#
+				master[1,6]==master[1,6]+master[30,14]}#
+			if (master[30,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[30,15]#
+				master[1,6]==master[1,6]+master[30,15]}}}}}}#
+if (master[1,p]==31){#
+  master[1,p]=11#
+  master[1,p+18]=3#
+}#
+#
+if (master[1,p]==32) {#
+if (p==1){#
+if (master[32,7]==0){#
+		if (master[1,p+3]>master[32,8]){#
+			master[1,p+3]==master[1,p+3]-master[32,8]#
+			master[32,7]==1}}#
+	if (master[32,7]==3){#
+		if (master[32,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[32,10]#
+				master[1,6]==master[1,6]+master[32,10]}#
+			if (master[32,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[32,11]#
+				master[1,6]==master[1,6]+master[32,11]}#
+			if (master[32,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[32,12]#
+				master[1,6]==master[1,6]+master[32,12]}#
+			if (master[32,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[32,13]#
+				master[1,6]==master[1,6]+master[32,13]}#
+			if (master[32,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[32,14]#
+				master[1,6]==master[1,6]+master[32,14]}#
+			if (master[32,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[32,15]#
+				master[1,6]==master[1,6]+master[32,15]}#
+if (p==3){#
+if (master[32,7]==0){#
+		if (master[1,p+3]>master[32,8]){#
+			master[1,p+3]==master[1,p+3]-master[32,8]#
+			master[32,7]==1}}#
+	if (master[32,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[32,10]#
+			master[1,6]==master[1,6]+master[32,10]}}#
+	if (p==2){#
+if (master[32,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[32,10]#
+			master[1,4]==master[1,4]+master[32,10]}#
+		if (master[32,7]==3){#
+			if (master[32,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[32,10]#
+				master[1,6]==master[1,6]+master[32,10]}#
+			if (master[32,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[32,11]#
+				master[1,6]==master[1,6]+master[32,11]}#
+			if (master[32,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[32,12]#
+				master[1,6]==master[1,6]+master[32,12]}#
+			if (master[32,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[32,13]#
+				master[1,6]==master[1,6]+master[32,13]}#
+			if (master[32,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[32,14]#
+				master[1,6]==master[1,6]+master[32,14]}#
+			if (master[32,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[32,15]#
+				master[1,6]==master[1,6]+master[32,15]}}}}}}#
+if (master[1,p]==33) {#
+if (p==1){#
+if (master[33,7]==0){#
+		if (master[1,p+3]>master[33,8]){#
+			master[1,p+3]==master[1,p+3]-master[33,8]#
+			master[33,7]==1}}#
+	if (master[33,7]==3){#
+		if (master[33,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[33,10]#
+				master[1,6]==master[1,6]+master[33,10]}#
+			if (master[33,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[33,11]#
+				master[1,6]==master[1,6]+master[33,11]}#
+			if (master[33,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[33,12]#
+				master[1,6]==master[1,6]+master[33,12]}#
+			if (master[33,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[33,13]#
+				master[1,6]==master[1,6]+master[33,13]}#
+			if (master[33,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[33,14]#
+				master[1,6]==master[1,6]+master[33,14]}#
+			if (master[33,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[33,15]#
+				master[1,6]==master[1,6]+master[33,15]}#
+if (p==3){#
+if (master[33,7]==0){#
+		if (master[1,p+3]>master[33,8]){#
+			master[1,p+3]==master[1,p+3]-master[33,8]#
+			master[30,7]==1}}#
+	if (master[33,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[33,10]#
+			master[1,6]==master[1,6]+master[33,10]}}#
+	if (p==2){#
+if (master[33,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[33,10]#
+			master[1,4]==master[1,4]+master[33,10]}#
+		if (master[33,7]==3){#
+			if (master[33,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[33,10]#
+				master[1,6]==master[1,6]+master[33,10]}#
+			if (master[33,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[33,11]#
+				master[1,6]==master[1,6]+master[33,11]}#
+			if (master[33,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[33,12]#
+				master[1,6]==master[1,6]+master[33,12]}#
+			if (master[33,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[33,13]#
+				master[1,6]==master[1,6]+master[33,13]}#
+			if (master[33,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[33,14]#
+				master[1,6]==master[1,6]+master[33,14]}#
+			if (master[33,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[33,15]#
+				master[1,6]==master[1,6]+master[33,15]}}}}}}#
+if (master[1,p]==35) {#
+if (p==1){#
+if (master[35,7]==0){#
+		if (master[1,p+3]>master[35,8]){#
+			master[1,p+3]==master[1,p+3]-master[35,8]#
+			master[35,7]==1}}#
+	if (master[35,7]==3){#
+		if (master[35,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[35,10]#
+				master[1,6]==master[1,6]+master[35,10]}#
+			if (master[35,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[35,11]#
+				master[1,6]==master[1,6]+master[35,11]}#
+			if (master[35,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[35,12]#
+				master[1,6]==master[1,6]+master[35,12]}#
+			if (master[35,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[35,13]#
+				master[1,6]==master[1,6]+master[35,13]}#
+			if (master[35,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[35,14]#
+				master[1,6]==master[1,6]+master[35,14]}#
+			if (master[35,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[35,15]#
+				master[1,6]==master[1,6]+master[35,15]}#
+if (p==3){#
+if (master[35,7]==0){#
+		if (master[1,p+3]>master[35,8]){#
+			master[1,p+3]==master[1,p+3]-master[35,8]#
+			master[35,7]==1}}#
+	if (master[35,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[35,10]#
+			master[1,6]==master[1,6]+master[35,10]}}#
+	if (p==2){#
+if (master[35,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[35,10]#
+			master[1,4]==master[1,4]+master[35,10]}#
+		if (master[35,7]==3){#
+			if (master[35,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[35,10]#
+				master[1,6]==master[1,6]+master[35,10]}#
+			if (master[35,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[35,11]#
+				master[1,6]==master[1,6]+master[35,11]}#
+			if (master[35,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[35,12]#
+				master[1,6]==master[1,6]+master[35,12]}#
+			if (master[35,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[35,13]#
+				master[1,6]==master[1,6]+master[35,13]}#
+			if (master[35,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[35,14]#
+				master[1,6]==master[1,6]+master[35,14]}#
+			if (master[35,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[35,15]#
+				master[1,6]==master[1,6]+master[35,15]}}}}}}#
+if (master[1,p]==36) {#
+	if (p==1){#
+if (master[36,7]==0){#
+		if (master[1,p+3]>master[36,8]){#
+			master[1,p+3]==master[1,p+3]-master[36,8]#
+			master[36,7]==1#
+r_1=1}}#
+		if (master[36,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[36,7]==0){#
+		if (master[1,p+3]>master[36,8]){#
+			master[1,p+3]==master[1,p+3]-master[36,8]#
+			master[36,7]==2#
+r_2=1}}#
+		if (master[36,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[36,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[36,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+#
+if (master[1,p]==38) {#
+if (p==1){#
+if (master[38,7]==0){#
+		if (master[1,p+3]>master[38,8]){#
+			master[1,p+3]==master[1,p+3]-master[38,8]#
+			master[38,7]==1}}}#
+	if (p>1){#
+		if (master[38,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[38,10]#
+			master[1,4]==master[1,4]+master[38,10]}}}#
+if (master[1,p]==39){#
+	master[1,p+3]==master[1,p+3]-75#
+freeparking=freeparking+75}#
+#
+if (master[1,p]==40) {#
+if (p==1){#
+if (master[40,7]==0){#
+		if (master[1,p+3]>master[40,8]){#
+			master[1,p+3]==master[1,p+3]-master[40,8]#
+			master[40,7]==1}}}#
+	if (p>1){#
+		if (master[40,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[40,10]#
+			master[1,4]==master[1,4]+master[40,10]}}}#
+}#
+}#
+}#
+#
+master[1,p] = master[1,p] +move#
+#
+if (p==3){#
+if ((master[27,7]==3) && (master[28,7]==3) && (master[30,7]==3)){#
+if ((master[27,16]==0) && (master[28,16]==0) && (master[30,16]==0)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==1) && (master[28,16]==1) && (master[30,16]==1)}}#
+if ((master[27,16]==1) && (master[28,16]==1) && (master[30,16]==1)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==2) && (master[28,16]==2) && (master[30,16]==2)}}#
+if ((master[27,16]==2) && (master[28,16]==2) && (master[30,16]==2)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==3) && (master[28,16]==3) && (master[30,16]==3)}}#
+if ((master[27,16]==3) && (master[28,16]==3) && (master[30,16]==3)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==4) && (master[28,16]==4) && (master[30,16]==4)}}#
+if ((master[27,16]==4) && (master[28,16]==4) && (master[30,16]==4)){#
+	if (master[1,6]-500>(master[27,18]+master[28,18]+master[30,18])){#
+		master[1,6]==master[1,6]-(master[27,18]+master[28,18]+master[30,18])#
+		(master[27,16]==5) && (master[28,16]==5) && (master[30,16]==5)}}}#
+if ((master[32,7]==3) && (master[33,7]==3) && (master[35,7]==3)){#
+if ((master[32,16]==0) && (master[33,16]==0) && (master[35,16]==0)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==1) && (master[33,16]==1) && (master[35,16]==1)}}#
+if ((master[32,16]==1) && (master[33,16]==1) && (master[35,16]==1)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==2) && (master[33,16]==2) && (master[35,16]==2)}}#
+if ((master[32,16]==2) && (master[33,16]==2) && (master[35,16]==2)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==3) && (master[33,16]==3) && (master[35,16]==3)}}#
+if ((master[32,16]==3) && (master[33,16]==3) && (master[35,16]==3)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==4) && (master[33,16]==4) && (master[35,16]==4)}}#
+if ((master[32,16]==4) && (master[33,16]==4) && (master[35,16]==4)){#
+	if (master[1,6]-500>(master[32,18]+master[33,18]+master[35,18])){#
+		master[1,6]==master[1,6]-(master[32,18]+master[33,18]+master[35,18])#
+		(master[32,16]==5) && (master[33,16]==5) && (master[35,16]==5)}}}#
+		}	#
+if (master[1,p]>40){#
+	master[1,p]=master[1,p]-40#
+	master[1,p+3]=master[1,p+3]+200}#
+if(master[1,p]==2){#
+if (p==1){#
+if (master[2,7]==0){#
+		if (master[1,p+3]>master[2,8]){#
+			master[1,p+3]==master[1,p+3]-master[2,8]#
+			master[2,7]==1}}}#
+	if (p>1){#
+		if (master[2,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[2,10]#
+			master[1,4]==master[1,4]+master[2,10]}}#
+			}#
+if(master[1,p] %in% c(3,18,34)){#
+  card = communitychest[1]#
+  communitychest=communitychest[-1]#
+if (card==1){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==2){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==3){#
+  master[1,p+3]=master[1,p+3]+45}#
+if (card==4){#
+  master[1,p+3]=master[1,p+3]+200}#
+if (card==5){#
+  master[1,p+3]=master[1,p+3]-100#
+freeparking=freeparking+100}#
+if (card==6){#
+  master[1,p+3]=master[1,p+3]-50#
+freeparking=freeparking+50}#
+if (card==7){master[1,p+21]=master[1,p+21]+1#
+  }#
+if (card==8){#
+  master[1,p+3]=master[1,p+3]+25}#
+if (card==9){#
+  master[1,p+3]=master[1,p+3]-150#
+freeparking=freeparking+150}#
+if (card==10){#
+  master[1,p]=1#
+  master[1,p+3]=master[1,p+3]+200}#
+if (card==11){#
+  master[1,p+3]=master[1,p+3]+10}#
+if (card==12){#
+  master[1,p+3]=master[1,p+3]+150#
+if (card==13){#
+  master[1,p+3]=master[1,p+3]+20}#
+if (card==14){master[1,p+3]=master[1,p+3]-40*h-115*H#
+	freeparking=freeparking+40*h+115*H#
+  }#
+if (card==15){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==16){#
+  master[1,p]=11#
+  master[1,p+18]=3}#
+}#
+}#
+#
+if (master[1,p]==4) {#
+if (p==1){#
+if (master[4,7]==0){#
+		if (master[1,p+3]>master[4,8]){#
+			master[1,p+3]==master[1,p+3]-master[4,8]#
+			master[4,7]==1}}}#
+	if ( p>1){#
+		if (master[4,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[4,10]#
+			master[1,4]==master[1,4]+master[4,10]}}#
+			}#
+if (master[1,p]==5){#
+	master[1,p+3]==master[1,p+3]-200#
+freeparking=freeparking+200}#
+#
+if (master[1,p]==6) {#
+	if (p==1){#
+if (master[6,7]==0){#
+		if (master[1,p+3]>master[6,8]){#
+			master[1,p+3]==master[1,p+3]-master[6,8]#
+			master[6,7]==1#
+r_1=1}}#
+		if (master[6,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}#
+				}#
+if (p==2){#
+		if (master[6,7]==0){#
+		if (master[1,p+3]>master[6,8]){#
+			master[1,p+3]==master[1,p+3]-master[6,8]#
+			master[6,7]==2#
+r_2=1}}#
+		if (master[6,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[6,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[6,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+				}#
+if (master[1,p]==7) {#
+if (p==1){#
+if (master[7,7]==0){#
+		if (master[1,p+3]>master[7,8]){#
+			master[1,p+3]==master[1,p+3]-master[7,8]#
+			master[7,7]==1}}}#
+	if ( p>1){#
+		if (master[7,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[7,10]#
+			master[1,4]==master[1,4]+master[7,10]}}#
+			}#
+if (master[1,p] %in% c(8,37,23)){#
+card = chance[1]#
+chance=chance[-1]#
+ if (card==1){#
+   master[1,p]=1#
+   master[1,p+3] = master[1,p+3]+200}#
+ if (card==2){#
+   master[1,p+3]=master[1,p+3]+50}#
+ if (card==3){#
+   master[1,p]=11#
+   master[1,p+18]=3}#
+ if (card==4){#
+   master[1,p+3]=master[1,p+3]-150#
+        	master[1,4]=master[1,4]+50#
+        	master[1,5]=master[1,5]+50#
+master[1,6]=master[1,6]+50}#
+ if (card==5){#
+if (master[1,p] %in% c(37:40,1:6)) {master[1,p]=6#
+        	if (master[6,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[6,7]==2){#
+        	{master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(7:16))#
+{master[1,p]==16#
+        	if (master[16,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[16,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(17:26))#
+{master[1,p]=26#
+        	if (master[26,7]==1){#
+        	{{master[1,4]={master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[26,7]==2){#
+        	{{master[1,5]={master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(27:36))#
+{master[1,p]=36#
+        	if (master[36,7]==1){#
+        	master[1,4]={master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[36,7]==5){#
+        	master[1,5]={master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}#
+        	}#
+ if (card==6){master[1,p]=25}#
+ if (card==7){master[1,p]=master[1,p]-3}#
+ if (card==8){master[1,p+3]=master[1,p+3]-15#
+freeparking=freeparking+15}#
+ if (card==9){#
+if (master[1,p] %in% c(37:40,1:6)) {master[1,p]=6#
+        	if (master[6,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}}#
+        	if (master[6,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(7:16))#
+{master[1,p]==16#
+        	if (master[16,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[16,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(17:26))#
+{master[1,p]=26#
+        	if (master[26,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[26,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(27:36))#
+{master[1,p]=36#
+        	if (master[36,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[36,7]==5){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+ if (card==10){master[1,p]=40}#
+ if (card==11){#
+master[1,p+21]=master[1,p+21]+1}#
+ if (card==12){#
+if (master[1,p] %in% c(29:40,1:13))#
+{master[1,p]==13}#
+if (master[13,7]==1){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,4]=master[1,4]+(10*roll)}#
+if (master[13,7]==2){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,5]=master[1,5]+(10*roll)}#
+if (master[1,p] %in% c(13:29)){#
+master[1,p]=29}#
+if (master[29,7]==1){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,4]=master[1,4]+(10*roll)}#
+if (master[29,7]==2){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,5]=master[1,5]+(10*roll)}}#
+ if (card==13){master[1,p]=12}#
+ if (card==14){master[1,p]=6}#
+ if (card==15){master[1,p+3]=master[1,p+3]+150}#
+ if (card==16){master[1,p+3]=master[1,p+3]-25*h-100*H#
+freeparking=25*h+100*H}#
+}}}}}}}}}}}}}#
+}#
+#
+if (master[1,p]==9) {#
+if (p==1){#
+if (master[9,7]==0){#
+		if (master[1,p+3]>master[9,8]){#
+			master[1,p+3]==master[1,p+3]-master[9,8]#
+			master[9,7]==1}}}#
+	if (p>1){#
+		if (master[9,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[9,10]#
+			master[1,4]==master[1,4]+master[9,10]}}#
+			}#
+if (master[1,p]==10){#
+if (p==1){#
+if (master[10,7]==0){#
+		if (master[1,p+3]>master[10,8]){#
+			master[1,p+3]==master[1,p+3]-master[10,8]#
+			master[10,7]==1}}}#
+	if (p>1){#
+		if (master[10,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[10,10]#
+			master[1,4]==master[1,4]+master[10,10]}}#
+			}#
+if (master[1,p]==11 && (master[1,p+18]==0)) { #
+	if (doubles==1){#
+		master[1,p+18]=0#
+master[1,p]==master[1,p]+move}#
+	if (doubles==0){#
+	master[1,p+18]==master[1,p+18]-1#
+master[1,p]==11}#
+}#
+if (master[1,p]==12) {#
+if (p==1){#
+if (master[12,7]==0){#
+		if (master[1,p+3]>master[12,8]){#
+			master[1,p+3]==master[1,p+3]-master[12,8]#
+			master[12,7]==1}}}#
+	if (p>1){#
+		if (master[12,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[12,10]#
+			master[1,4]==master[1,4]+master[12,10]}}#
+			}#
+if (master[1,p]==13){#
+	if (master[13,7]==0){#
+		if (master[1,p+3]>master[13,8]){#
+			master[1,p+3]==master[1,p+3]-master[13,8]#
+			master[13,7]==1}}#
+	if (master[13,7]>0){#
+		if (master[13,7]==2){#
+			if (master[29,7]==2){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,5]==master[1,5]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,5]==master[1,5]+(4*roll)}}#
+		if (master[13,7]==3){#
+			if (master[29,7]==3){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,6]==master[1,6]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,6]==master[1,6]+(4*roll)}}}#
+}#
+#
+if (master[1,p]==14) {#
+if (p==1){#
+if (master[14,7]==0){#
+		if (master[1,p+3]>master[14,8]){#
+			master[1,p+3]==master[1,p+3]-master[14,8]#
+			master[14,7]==1}}}#
+	if (p>1){#
+		if (master[14,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[14,10]#
+			master[1,4]==master[1,4]+master[14,10]}}#
+			}#
+if (master[1,p]==15) {#
+if (p==1){#
+if (master[15,7]==0){#
+		if (master[1,p+3]>master[15,8]){#
+			master[1,p+3]==master[1,p+3]-master[15,8]#
+			master[15,7]==1}}}#
+	if (p>1){#
+		if (master[15,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[15,10]#
+			master[1,4]==master[1,4]+master[15,10]}}#
+			}#
+if (master[1,p]==16) {#
+	if (p==1){#
+if (master[16,7]==0){#
+		if (master[1,p+3]>master[16,8]){#
+			master[1,p+3]==master[1,p+3]-master[16,8]#
+			master[16,7]==1#
+r_1=1}}#
+		if (master[16,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[16,7]==0){#
+		if (master[1,p+3]>master[16,8]){#
+			master[1,p+3]==master[1,p+3]-master[16,8]#
+			master[16,7]==2#
+r_2=1}}#
+		if (master[16,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+				}#
+if (master[1,p]==17) {#
+if (p==1){#
+if (master[17,7]==0){#
+		if (master[1,p+3]>master[17,8]){#
+			master[1,p+3]==master[1,p+3]-master[17,8]#
+			master[17,7]==1}}}#
+	if (p>1){#
+		if (master[17,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[17,10]#
+			master[1,4]==master[1,4]+master[17,10]}}#
+			}#
+#
+if (master[1,p]==19) {#
+if (p==1){#
+if (master[19,7]==0){#
+		if (master[1,p+3]>master[19,8]){#
+			master[1,p+3]==master[1,p+3]-master[19,8]#
+			master[19,7]==1}}}#
+	if (p>1){#
+		if (master[19,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[19,10]#
+			master[1,4]==master[1,4]+master[19,10]}}#
+			}#
+if (master[1,p]==20) {#
+if (p==1){#
+if (master[20,7]==0){#
+		if (master[1,p+3]>master[20,8]){#
+			master[1,p+3]==master[1,p+3]-master[20,8]#
+			master[20,7]==1}}}#
+	if (p>1){#
+		if (master[20,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[20,10]#
+			master[1,4]==master[1,4]+master[20,10]}}#
+			}#
+if (master[1,p]==21){#
+	master[1,p+3]=master[1,p+3]+freeparking}#
+if (master[1,p]==22) {#
+if (p==1){#
+if (master[22,7]==0){#
+		if (master[1,p+3]>master[22,8]){#
+			master[1,p+3]==master[1,p+3]-master[22,8]#
+			master[22,7]==1}}}#
+	if (p>1){#
+		if (master[22,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[22,10]#
+			master[1,4]==master[1,4]+master[22,10]}}#
+			}#
+#
+if (master[1,p]==24) {#
+if (p==1){#
+if (master[24,7]==0){#
+		if (master[1,p+3]>master[24,8]){#
+			master[1,p+3]==master[1,p+3]-master[24,8]#
+			master[24,7]==1}}}#
+	if (p>1){#
+		if (master[24,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[24,10]#
+			master[1,4]==master[1,4]+master[24,10]}}#
+			}#
+if (master[1,p]==25) {#
+if (p==1){#
+if (master[25,7]==0){#
+		if (master[1,p+3]>master[25,8]){#
+			master[1,p+3]==master[1,p+3]-master[25,8]#
+			master[25,7]==1}}}#
+	if (p>1){#
+		if (master[25,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[25,10]#
+			master[1,4]==master[1,4]+master[25,10]}}#
+			}#
+if (master[1,p]==26) {#
+	if (p==1){#
+if (master[26,7]==0){#
+		if (master[1,p+3]>master[26,8]){#
+			master[1,p+3]==master[1,p+3]-master[26,8]#
+			master[26,7]==1#
+r_1=1}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[26,7]==0){#
+		if (master[1,p+3]>master[26,8]){#
+			master[1,p+3]==master[1,p+3]-master[26,8]#
+			master[26,7]==2#
+r_2=1}}#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+				}#
+if (master[1,p]==27) {#
+if (p==1){#
+if (master[27,7]==0){#
+		if (master[1,p+3]>master[27,8]){#
+			master[1,p+3]==master[1,p+3]-master[27,8]#
+			master[27,7]==1}}#
+	if (master[27,7]==3){#
+		if (master[27,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[27,10]#
+				master[1,6]==master[1,6]+master[27,10]}#
+			if (master[27,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[27,11]#
+				master[1,6]==master[1,6]+master[27,11]}#
+			if (master[27,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[27,12]#
+				master[1,6]==master[1,6]+master[27,12]}#
+			if (master[27,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[27,13]#
+				master[1,6]==master[1,6]+master[27,13]}#
+			if (master[27,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+			if (master[27,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+if (p==3){#
+if (master[27,7]==0){#
+		if (master[1,p+3]>master[27,8]){#
+			master[1,p+3]==master[1,p+3]-master[27,8]#
+			master[27,7]==1}}#
+	if (master[27,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[27,10]#
+			master[1,6]==master[1,6]+master[27,10]}}#
+	if (p==2){#
+if (master[27,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[27,10]#
+			master[1,4]==master[1,4]+master[27,10]}#
+		if (master[27,7]==3){#
+			if (master[27,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[27,10]#
+				master[1,6]==master[1,6]+master[27,10]}#
+			if (master[27,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[27,11]#
+				master[1,6]==master[1,6]+master[27,11]}#
+			if (master[27,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[27,12]#
+				master[1,6]==master[1,6]+master[27,12]}#
+			if (master[27,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[27,13]#
+				master[1,6]==master[1,6]+master[27,13]}#
+			if (master[27,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+			if (master[27,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[27,15]#
+				master[1,6]==master[1,6]+master[27,15]}}}}}#
+				}#
+if (master[1,p]==28) {#
+if (p==1){#
+if (master[28,7]==0){#
+		if (master[1,p+3]>master[28,8]){#
+			master[1,p+3]==master[1,p+3]-master[28,8]#
+			master[28,7]==1}}#
+	if (master[28,7]==3){#
+		if (master[28,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[28,10]#
+				master[1,6]==master[1,6]+master[28,10]}#
+			if (master[28,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[28,11]#
+				master[1,6]==master[1,6]+master[28,11]}#
+			if (master[28,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[28,12]#
+				master[1,6]==master[1,6]+master[28,12]}#
+			if (master[28,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[28,13]#
+				master[1,6]==master[1,6]+master[28,13]}#
+			if (master[28,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[28,14]#
+				master[1,6]==master[1,6]+master[28,14]}#
+			if (master[28,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[28,15]#
+				master[1,6]==master[1,6]+master[28,15]}#
+if (p==3){#
+if (master[28,7]==0){#
+		if (master[1,p+3]>master[28,8]){#
+			master[1,p+3]==master[1,p+3]-master[28,8]#
+			master[28,7]==1}}#
+	if (master[28,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[28,10]#
+			master[1,6]==master[1,6]+master[28,10]}}#
+	if (p==2){#
+if (master[28,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[28,10]#
+			master[1,4]==master[1,4]+master[28,10]}#
+		if (master[28,7]==3){#
+			if (master[28,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[28,10]#
+				master[1,6]==master[1,6]+master[28,10]}#
+			if (master[28,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[28,11]#
+				master[1,6]==master[1,6]+master[28,11]}#
+			if (master[28,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[28,12]#
+				master[1,6]==master[1,6]+master[28,12]}#
+			if (master[28,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[28,13]#
+				master[1,6]==master[1,6]+master[28,13]}#
+			if (master[28,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[28,14]#
+				master[1,6]==master[1,6]+master[28,14]}#
+			if (master[28,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[28,15]#
+				master[1,6]==master[1,6]+master[28,15]}}}}}#
+				}#
+if (master[1,p]==29){#
+	if (master[29,7]==0){#
+		if (master[1,p+3]>master[29,8]){#
+			master[1,p+3]==master[1,p+3]-master[29,8]#
+			master[29,7]==1}}#
+	if (master[29,7]>0){#
+		if (master[29,7]==2){#
+			if (master[29,7]==2){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,5]==master[1,5]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,5]==master[1,5]+(4*roll)}}#
+		if (master[29,7]==3){#
+			if (master[29,7]==3){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,6]==master[1,6]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,6]==master[1,6]+(4*roll)}}}#
+}#
+#
+if (master[1,p]==30) {#
+if (p==1){#
+if (master[30,7]==0){#
+		if (master[1,p+3]>master[30,8]){#
+			master[1,p+3]==master[1,p+3]-master[30,8]#
+			master[30,7]==1}}#
+	if (master[30,7]==3){#
+		if (master[30,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[30,10]#
+				master[1,6]==master[1,6]+master[30,10]}#
+			if (master[30,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[30,11]#
+				master[1,6]==master[1,6]+master[30,11]}#
+			if (master[30,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[30,12]#
+				master[1,6]==master[1,6]+master[30,12]}#
+			if (master[30,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[30,13]#
+				master[1,6]==master[1,6]+master[30,13]}#
+			if (master[30,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[30,14]#
+				master[1,6]==master[1,6]+master[30,14]}#
+			if (master[30,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[30,15]#
+				master[1,6]==master[1,6]+master[30,15]}#
+if (p==3){#
+if (master[30,7]==0){#
+		if (master[1,p+3]>master[30,8]){#
+			master[1,p+3]==master[1,p+3]-master[30,8]#
+			master[30,7]==1}}#
+	if (master[30,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[30,10]#
+			master[1,6]==master[1,6]+master[30,10]}}#
+	if (p==2){#
+if (master[30,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[30,10]#
+			master[1,4]==master[1,4]+master[30,10]}#
+		if (master[30,7]==3){#
+			if (master[30,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[30,10]#
+				master[1,6]==master[1,6]+master[30,10]}#
+			if (master[30,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[30,11]#
+				master[1,6]==master[1,6]+master[30,11]}#
+			if (master[30,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[30,12]#
+				master[1,6]==master[1,6]+master[30,12]}#
+			if (master[30,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[30,13]#
+				master[1,6]==master[1,6]+master[30,13]}#
+			if (master[30,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[30,14]#
+				master[1,6]==master[1,6]+master[30,14]}#
+			if (master[30,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[30,15]#
+				master[1,6]==master[1,6]+master[30,15]}}}}}#
+				}#
+if (master[1,p]==31){#
+  master[1,p]=11#
+  master[1,p+18]=3#
+}#
+#
+if (master[1,p]==32) {#
+if (p==1){#
+if (master[32,7]==0){#
+		if (master[1,p+3]>master[32,8]){#
+			master[1,p+3]==master[1,p+3]-master[32,8]#
+			master[32,7]==1}}#
+	if (master[32,7]==3){#
+		if (master[32,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[32,10]#
+				master[1,6]==master[1,6]+master[32,10]}#
+			if (master[32,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[32,11]#
+				master[1,6]==master[1,6]+master[32,11]}#
+			if (master[32,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[32,12]#
+				master[1,6]==master[1,6]+master[32,12]}#
+			if (master[32,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[32,13]#
+				master[1,6]==master[1,6]+master[32,13]}#
+			if (master[32,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[32,14]#
+				master[1,6]==master[1,6]+master[32,14]}#
+			if (master[32,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[32,15]#
+				master[1,6]==master[1,6]+master[32,15]}#
+if (p==3){#
+if (master[32,7]==0){#
+		if (master[1,p+3]>master[32,8]){#
+			master[1,p+3]==master[1,p+3]-master[32,8]#
+			master[32,7]==1}}#
+	if (master[32,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[32,10]#
+			master[1,6]==master[1,6]+master[32,10]}}#
+	if (p==2){#
+if (master[32,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[32,10]#
+			master[1,4]==master[1,4]+master[32,10]}#
+		if (master[32,7]==3){#
+			if (master[32,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[32,10]#
+				master[1,6]==master[1,6]+master[32,10]}#
+			if (master[32,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[32,11]#
+				master[1,6]==master[1,6]+master[32,11]}#
+			if (master[32,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[32,12]#
+				master[1,6]==master[1,6]+master[32,12]}#
+			if (master[32,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[32,13]#
+				master[1,6]==master[1,6]+master[32,13]}#
+			if (master[32,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[32,14]#
+				master[1,6]==master[1,6]+master[32,14]}#
+			if (master[32,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[32,15]#
+				master[1,6]==master[1,6]+master[32,15]}}}}}#
+				}#
+if (master[1,p]==33) {#
+if (p==1){#
+if (master[33,7]==0){#
+		if (master[1,p+3]>master[33,8]){#
+			master[1,p+3]==master[1,p+3]-master[33,8]#
+			master[33,7]==1}}#
+	if (master[33,7]==3){#
+		if (master[33,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[33,10]#
+				master[1,6]==master[1,6]+master[33,10]}#
+			if (master[33,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[33,11]#
+				master[1,6]==master[1,6]+master[33,11]}#
+			if (master[33,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[33,12]#
+				master[1,6]==master[1,6]+master[33,12]}#
+			if (master[33,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[33,13]#
+				master[1,6]==master[1,6]+master[33,13]}#
+			if (master[33,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[33,14]#
+				master[1,6]==master[1,6]+master[33,14]}#
+			if (master[33,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[33,15]#
+				master[1,6]==master[1,6]+master[33,15]}#
+if (p==3){#
+if (master[33,7]==0){#
+		if (master[1,p+3]>master[33,8]){#
+			master[1,p+3]==master[1,p+3]-master[33,8]#
+			master[30,7]==1}}#
+	if (master[33,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[33,10]#
+			master[1,6]==master[1,6]+master[33,10]}}#
+	if (p==2){#
+if (master[33,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[33,10]#
+			master[1,4]==master[1,4]+master[33,10]}#
+		if (master[33,7]==3){#
+			if (master[33,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[33,10]#
+				master[1,6]==master[1,6]+master[33,10]}#
+			if (master[33,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[33,11]#
+				master[1,6]==master[1,6]+master[33,11]}#
+			if (master[33,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[33,12]#
+				master[1,6]==master[1,6]+master[33,12]}#
+			if (master[33,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[33,13]#
+				master[1,6]==master[1,6]+master[33,13]}#
+			if (master[33,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[33,14]#
+				master[1,6]==master[1,6]+master[33,14]}#
+			if (master[33,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[33,15]#
+				master[1,6]==master[1,6]+master[33,15]}}}}}#
+				}#
+if (master[1,p]==35) {#
+if (p==1){#
+if (master[35,7]==0){#
+		if (master[1,p+3]>master[35,8]){#
+			master[1,p+3]==master[1,p+3]-master[35,8]#
+			master[35,7]==1}}#
+	if (master[35,7]==3){#
+		if (master[35,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[35,10]#
+				master[1,6]==master[1,6]+master[35,10]}#
+			if (master[35,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[35,11]#
+				master[1,6]==master[1,6]+master[35,11]}#
+			if (master[35,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[35,12]#
+				master[1,6]==master[1,6]+master[35,12]}#
+			if (master[35,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[35,13]#
+				master[1,6]==master[1,6]+master[35,13]}#
+			if (master[35,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[35,14]#
+				master[1,6]==master[1,6]+master[35,14]}#
+			if (master[35,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[35,15]#
+				master[1,6]==master[1,6]+master[35,15]}#
+if (p==3){#
+if (master[35,7]==0){#
+		if (master[1,p+3]>master[35,8]){#
+			master[1,p+3]==master[1,p+3]-master[35,8]#
+			master[35,7]==1}}#
+	if (master[35,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[35,10]#
+			master[1,6]==master[1,6]+master[35,10]}}#
+	if (p==2){#
+if (master[35,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[35,10]#
+			master[1,4]==master[1,4]+master[35,10]}#
+		if (master[35,7]==3){#
+			if (master[35,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[35,10]#
+				master[1,6]==master[1,6]+master[35,10]}#
+			if (master[35,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[35,11]#
+				master[1,6]==master[1,6]+master[35,11]}#
+			if (master[35,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[35,12]#
+				master[1,6]==master[1,6]+master[35,12]}#
+			if (master[35,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[35,13]#
+				master[1,6]==master[1,6]+master[35,13]}#
+			if (master[35,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[35,14]#
+				master[1,6]==master[1,6]+master[35,14]}#
+			if (master[35,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[35,15]#
+				master[1,6]==master[1,6]+master[35,15]}}}}}#
+				}#
+if (master[1,p]==36) {#
+	if (p==1){#
+if (master[36,7]==0){#
+		if (master[1,p+3]>master[36,8]){#
+			master[1,p+3]==master[1,p+3]-master[36,8]#
+			master[36,7]==1#
+r_1=1}}#
+		if (master[36,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[36,7]==0){#
+		if (master[1,p+3]>master[36,8]){#
+			master[1,p+3]==master[1,p+3]-master[36,8]#
+			master[36,7]==2#
+r_2=1}}#
+		if (master[36,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[36,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[36,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+				}#
+#
+if (master[1,p]==38) {#
+if (p==1){#
+if (master[38,7]==0){#
+		if (master[1,p+3]>master[38,8]){#
+			master[1,p+3]==master[1,p+3]-master[38,8]#
+			master[38,7]==1}}}#
+	if (p>1){#
+		if (master[38,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[38,10]#
+			master[1,4]==master[1,4]+master[38,10]}}#
+			}#
+if (master[1,p]==39){#
+	master[1,p+3]==master[1,p+3]-75#
+freeparking=freeparking+75}#
+#
+if (master[1,p]==40) {#
+if (p==1){#
+if (master[40,7]==0){#
+		if (master[1,p+3]>master[40,8]){#
+			master[1,p+3]==master[1,p+3]-master[40,8]#
+			master[40,7]==1}}}#
+	if (p>1){#
+		if (master[40,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[40,10]#
+			master[1,4]==master[1,4]+master[40,10]}}#
+			}#
+#
+print(p)#
+}
+p = 1
+#variables##
+freeparking=0#
+h=1*sum(master[,16]==1) + 2*sum(master[,16]==2) + 3*sum(master[,16]==3) + 4*sum(master[,16]==4)#
+H=sum(master[,16]==5)#
+r_1=0#
+r_2=0#
+numdubs=0
+h
+H
+community_chest = sample(1:16)#
+communitychest=rep(community_chest,10)#
+#
+chance_ = sample(1:16)#
+chance = rep(chance_,10)#
+#
+roll=sample(1:6, 2, replace=TRUE) #
+move=(roll[1]+roll[2])#
+doubles=(roll[1]==roll[2])
+roll
+while(doubles>0){#
+numdubs=numdubs+doubles#
+#
+if(numdubs==3) {#
+  master[1,p] = 11#
+	master[1,p+18]==3#
+} else {#
+	master[1,p] = master[1,p] +move#
+if (p==3){#
+if ((master[27,7]==3) && (master[28,7]==3) && (master[30,7]==3)){#
+if ((master[27,16]==0) && (master[28,16]==0) && (master[30,16]==0)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==1) && (master[28,16]==1) && (master[30,16]==1)}}#
+if ((master[27,16]==1) && (master[28,16]==1) && (master[30,16]==1)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==2) && (master[28,16]==2) && (master[30,16]==2)}}#
+if ((master[27,16]==2) && (master[28,16]==2) && (master[30,16]==2)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==3) && (master[28,16]==3) && (master[30,16]==3)}}#
+if ((master[27,16]==3) && (master[28,16]==3) && (master[30,16]==3)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==4) && (master[28,16]==4) && (master[30,16]==4)}}#
+if ((master[27,16]==4) && (master[28,16]==4) && (master[30,16]==4)){#
+	if (master[1,6]-500>(master[27,18]+master[28,18]+master[30,18])){#
+		master[1,6]==master[1,6]-(master[27,18]+master[28,18]+master[30,18])#
+		(master[27,16]==5) && (master[28,16]==5) && (master[30,16]==5)}}}#
+if ((master[32,7]==3) && (master[33,7]==3) && (master[35,7]==3)){#
+if ((master[32,16]==0) && (master[33,16]==0) && (master[35,16]==0)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==1) && (master[33,16]==1) && (master[35,16]==1)}}#
+if ((master[32,16]==1) && (master[33,16]==1) && (master[35,16]==1)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==2) && (master[33,16]==2) && (master[35,16]==2)}}#
+if ((master[32,16]==2) && (master[33,16]==2) && (master[35,16]==2)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==3) && (master[33,16]==3) && (master[35,16]==3)}}#
+if ((master[32,16]==3) && (master[33,16]==3) && (master[35,16]==3)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==4) && (master[33,16]==4) && (master[35,16]==4)}}#
+if ((master[32,16]==4) && (master[33,16]==4) && (master[35,16]==4)){#
+	if (master[1,6]-500>(master[32,18]+master[33,18]+master[35,18])){#
+		master[1,6]==master[1,6]-(master[32,18]+master[33,18]+master[35,18])#
+		(master[32,16]==5) && (master[33,16]==5) && (master[35,16]==5)}}}}	#
+	if (master[1,p]>40){#
+	master[1,p]=master[1,p]-40#
+	master[1,p+3]=master[1,p+3]+200}#
+	if (master[1,p]==2) {#
+		###PLAYER 1#########
+if (p==1){#
+if (master[2,7]==0){#
+		if (master[1,p+3]>master[2,8]){#
+			master[1,p+3]==master[1,p+3]-master[2,8]#
+			master[2,7]==1}}}#
+	###PLAYER 2/3#########
+#
+	if (p>1){#
+		if (master[2,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[2,10]#
+			master[1,4]==master[1,4]+master[2,10]}}}#
+if(master[1,p] %in% c(3,18,34)){#
+  card = communitychest[1]#
+  communitychest=communitychest[-1]#
+if (card==1){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==2){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==3){#
+  master[1,p+3]=master[1,p+3]+45}#
+if (card==4){#
+  master[1,p+3]=master[1,p+3]+200}#
+if (card==5){#
+  master[1,p+3]=master[1,p+3]-100#
+freeparking=freeparking+100}#
+if (card==6){#
+  master[1,p+3]=master[1,p+3]-50#
+freeparking=freeparking+50}#
+if (card==7){master[1,p+21]=master[1,p+21]+1#
+  }#
+if (card==8){#
+  master[1,p+3]=master[1,p+3]+25}#
+if (card==9){#
+  master[1,p+3]=master[1,p+3]-150#
+freeparking=freeparking+150}#
+if (card==10){#
+  master[1,p]=1#
+  master[1,p+3]=master[1,p+3]+200}#
+if (card==11){#
+  master[1,p+3]=master[1,p+3]+10}#
+if (card==12){#
+  master[1,p+3]=master[1,p+3]+150#
+if (card==13){#
+  master[1,p+3]=master[1,p+3]+20}#
+if (card==14){master[1,p+3]=master[1,p+3]-40*h-115*H#
+	freeparking=freeparking+40*h+115*H#
+  }#
+if (card==15){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==16){#
+  master[1,p]=11#
+  master[1,p+18]=3}#
+}}#
+if (master[1,p]==4) {#
+	###PLAYER 1#########
+#
+if (p==1){#
+if (master[4,7]==0){#
+		if (master[1,p+3]>master[4,8]){#
+			master[1,p+3]==master[1,p+3]-master[4,8]#
+			master[4,7]==1}}}#
+			###PLAYER 2/3#########
+#
+	if ( p>1){#
+		if (master[4,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[4,10]#
+			master[1,4]==master[1,4]+master[4,10]}}}#
+if (master[1,p]==5){#
+	master[1,p+3]==master[1,p+3]-200#
+freeparking=freeparking+200}#
+if (master[1,p]==6) {#
+	###PLAYER 1#########
+	if (p==1){#
+if (master[6,7]==0){#
+		if (master[1,p+3]>master[6,8]){#
+			master[1,p+3]==master[1,p+3]-master[6,8]#
+			master[6,7]==1#
+r_1=1}}#
+		if (master[6,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+		###PLAYER 2#########
+	if (p==2){#
+		if (master[6,7]==0){#
+		if (master[1,p+3]>master[6,8]){#
+			master[1,p+3]==master[1,p+3]-master[6,8]#
+			master[6,7]==2#
+r_2=1}}#
+		if (master[6,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+###PLAYER 3#########
+	if (p==3){#
+		if (master[6,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[6,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+if (master[1,p]==7) {#
+if (p==1){#
+if (master[7,7]==0){#
+		if (master[1,p+3]>master[7,8]){#
+			master[1,p+3]==master[1,p+3]-master[7,8]#
+			master[7,7]==1}}}#
+	if ( p>1){#
+		if (master[7,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[7,10]#
+			master[1,4]==master[1,4]+master[7,10]}}}#
+if (master[1,p] %in% c(8,37,23)){#
+card = chance[1]#
+chance=chance[-1]#
+ if (card==1){#
+   master[1,p]=1#
+   master[1,p+3] = master[1,p+3]+200}#
+ if (card==2){#
+   master[1,p+3]=master[1,p+3]+50}#
+ if (card==3){#
+   master[1,p]=11#
+   master[1,p+18]=3}#
+ if (card==4){#
+   master[1,p+3]=master[1,p+3]-150#
+        	master[1,4]=master[1,4]+50#
+        	master[1,5]=master[1,5]+50#
+master[1,6]=master[1,6]+50}#
+ if (card==5){#
+if (master[1,p] %in% c(37:40,1:6)) {master[1,p]=6#
+        	if (master[6,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[6,7]==2){#
+        	{master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(7:16))#
+{master[1,p]==16#
+        	if (master[16,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[16,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(17:26))#
+{master[1,p]=26#
+        	if (master[26,7]==1){#
+        	{{master[1,4]={master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[26,7]==2){#
+        	{{master[1,5]={master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(27:36))#
+{master[1,p]=36#
+        	if (master[36,7]==1){#
+        	master[1,4]={master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[36,7]==5){#
+        	master[1,5]={master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}#
+        	}#
+ if (card==6){master[1,p]=25}#
+ if (card==7){master[1,p]=master[1,p]-3}#
+ if (card==8){master[1,p+3]=master[1,p+3]-15#
+freeparking=freeparking+15}#
+ if (card==9){#
+if (master[1,p] %in% c(37:40,1:6)) {master[1,p]=6#
+        	if (master[6,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}}#
+        	if (master[6,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(7:16))#
+{master[1,p]==16#
+        	if (master[16,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[16,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(17:26))#
+{master[1,p]=26#
+        	if (master[26,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[26,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(27:36))#
+{master[1,p]=36#
+        	if (master[36,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[36,7]==5){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+ if (card==10){master[1,p]=40}#
+ if (card==11){#
+master[1,p+21]=master[1,p+21]+1}#
+ if (card==12){#
+if (master[1,p] %in% c(29:40,1:13))#
+{master[1,p]==13}#
+if (master[13,7]==1){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,4]=master[1,4]+(10*roll)}#
+if (master[13,7]==2){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,5]=master[1,5]+(10*roll)}#
+if (master[1,p] %in% c(13:29)){#
+master[1,p]=29}#
+if (master[29,7]==1){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,4]=master[1,4]+(10*roll)}#
+if (master[29,7]==2){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,5]=master[1,5]+(10*roll)}}#
+ if (card==13){master[1,p]=12}#
+ if (card==14){master[1,p]=6}#
+ if (card==15){master[1,p+3]=master[1,p+3]+150}#
+ if (card==16){master[1,p+3]=master[1,p+3]-25*h-100*H#
+freeparking=25*h+100*H}#
+}}}}}}}}}}}}}}#
+if (master[1,p]==9) {#
+if (p==1){#
+if (master[9,7]==0){#
+		if (master[1,p+3]>master[9,8]){#
+			master[1,p+3]==master[1,p+3]-master[9,8]#
+			master[9,7]==1}}}#
+	if (p>1){#
+		if (master[9,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[9,10]#
+			master[1,4]==master[1,4]+master[9,10]}}}#
+if (master[1,p]==10) {#
+if (p==1){#
+if (master[10,7]==0){#
+		if (master[1,p+3]>master[10,8]){#
+			master[1,p+3]==master[1,p+3]-master[10,8]#
+			master[10,7]==1}}}#
+	if (p>1){#
+		if (master[10,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[10,10]#
+			master[1,4]==master[1,4]+master[10,10]}}}#
+if (master[1,p]==11 && (master[1,p+18]==0)) { #
+	if (doubles==1){#
+		master[1,p+18]=0#
+master[1,p]==master[1,p]+move}#
+	if (doubles==0){#
+	master[1,p+18]==master[1,p+18]-1#
+master[1,p]==11}#
+}	#
+if (master[1,p]==12) {#
+if (p==1){#
+if (master[12,7]==0){#
+		if (master[1,p+3]>master[12,8]){#
+			master[1,p+3]==master[1,p+3]-master[12,8]#
+			master[12,7]==1}}}#
+	if (p>1){#
+		if (master[12,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[12,10]#
+			master[1,4]==master[1,4]+master[12,10]}}}#
+if (master[1,p]==13){#
+	if (master[13,7]==0){#
+		if (master[1,p+3]>master[13,8]){#
+			master[1,p+3]==master[1,p+3]-master[13,8]#
+			master[13,7]==1}}#
+	if (master[13,7]>0){#
+		if (master[13,7]==2){#
+			if (master[29,7]==2){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,5]==master[1,5]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,5]==master[1,5]+(4*roll)}}#
+		if (master[13,7]==3){#
+			if (master[29,7]==3){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,6]==master[1,6]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,6]==master[1,6]+(4*roll)}}}#
+#
+if (master[1,p]==14) {#
+if (p==1){#
+if (master[14,7]==0){#
+		if (master[1,p+3]>master[14,8]){#
+			master[1,p+3]==master[1,p+3]-master[14,8]#
+			master[14,7]==1}}}#
+	if (p>1){#
+		if (master[14,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[14,10]#
+			master[1,4]==master[1,4]+master[14,10]}}}#
+if (master[1,p]==15) {#
+if (p==1){#
+if (master[15,7]==0){#
+		if (master[1,p+3]>master[15,8]){#
+			master[1,p+3]==master[1,p+3]-master[15,8]#
+			master[15,7]==1}}}#
+	if (p>1){#
+		if (master[15,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[15,10]#
+			master[1,4]==master[1,4]+master[15,10]}}}#
+if (master[1,p]==16) {#
+	if (p==1){#
+if (master[16,7]==0){#
+		if (master[1,p+3]>master[16,8]){#
+			master[1,p+3]==master[1,p+3]-master[16,8]#
+			master[16,7]==1#
+r_1=1}}#
+		if (master[16,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[16,7]==0){#
+		if (master[1,p+3]>master[16,8]){#
+			master[1,p+3]==master[1,p+3]-master[16,8]#
+			master[16,7]==2#
+r_2=1}}#
+		if (master[16,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+if (master[1,p]==17) {#
+if (p==1){#
+if (master[17,7]==0){#
+		if (master[1,p+3]>master[17,8]){#
+			master[1,p+3]==master[1,p+3]-master[17,8]#
+			master[17,7]==1}}}#
+	if (p>1){#
+		if (master[17,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[17,10]#
+			master[1,4]==master[1,4]+master[17,10]}}}#
+#
+if (master[1,p]==19) {#
+if (p==1){#
+if (master[19,7]==0){#
+		if (master[1,p+3]>master[19,8]){#
+			master[1,p+3]==master[1,p+3]-master[19,8]#
+			master[19,7]==1}}}#
+	if (p>1){#
+		if (master[19,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[19,10]#
+			master[1,4]==master[1,4]+master[19,10]}}}#
+if (master[1,p]==20) {#
+if (p==1){#
+if (master[20,7]==0){#
+		if (master[1,p+3]>master[20,8]){#
+			master[1,p+3]==master[1,p+3]-master[20,8]#
+			master[20,7]==1}}}#
+	if (p>1){#
+		if (master[20,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[20,10]#
+			master[1,4]==master[1,4]+master[20,10]}}}#
+if (master[1,p]==21){#
+	master[1,p+3]=master[1,p+3]+freeparking}#
+if (master[1,p]==22) {#
+if (p==1){#
+if (master[22,7]==0){#
+		if (master[1,p+3]>master[22,8]){#
+			master[1,p+3]==master[1,p+3]-master[22,8]#
+			master[22,7]==1}}}#
+	if (p>1){#
+		if (master[22,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[22,10]#
+			master[1,4]==master[1,4]+master[22,10]}}}#
+#
+if (master[1,p]==24) {#
+if (p==1){#
+if (master[24,7]==0){#
+		if (master[1,p+3]>master[24,8]){#
+			master[1,p+3]==master[1,p+3]-master[24,8]#
+			master[24,7]==1}}}#
+	if (p>1){#
+		if (master[24,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[24,10]#
+			master[1,4]==master[1,4]+master[24,10]}}}#
+if (master[1,p]==25) {#
+if (p==1){#
+if (master[25,7]==0){#
+		if (master[1,p+3]>master[25,8]){#
+			master[1,p+3]==master[1,p+3]-master[25,8]#
+			master[25,7]==1}}}#
+	if (p>1){#
+		if (master[25,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[25,10]#
+			master[1,4]==master[1,4]+master[25,10]}}}#
+if (master[1,p]==26) {#
+	if (p==1){#
+if (master[26,7]==0){#
+		if (master[1,p+3]>master[26,8]){#
+			master[1,p+3]==master[1,p+3]-master[26,8]#
+			master[26,7]==1#
+r_1=1}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[26,7]==0){#
+		if (master[1,p+3]>master[26,8]){#
+			master[1,p+3]==master[1,p+3]-master[26,8]#
+			master[26,7]==2#
+r_2=1}}#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+if (master[1,p]==27) {#
+if (p==1){#
+if (master[27,7]==0){#
+		if (master[1,p+3]>master[27,8]){#
+			master[1,p+3]==master[1,p+3]-master[27,8]#
+			master[27,7]==1}}#
+	if (master[27,7]==3){#
+		if (master[27,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[27,10]#
+				master[1,6]==master[1,6]+master[27,10]}#
+			if (master[27,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[27,11]#
+				master[1,6]==master[1,6]+master[27,11]}#
+			if (master[27,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[27,12]#
+				master[1,6]==master[1,6]+master[27,12]}#
+			if (master[27,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[27,13]#
+				master[1,6]==master[1,6]+master[27,13]}#
+			if (master[27,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+			if (master[27,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+if (p==3){#
+if (master[27,7]==0){#
+		if (master[1,p+3]>master[27,8]){#
+			master[1,p+3]==master[1,p+3]-master[27,8]#
+			master[27,7]==1}}#
+	if (master[27,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[27,10]#
+			master[1,6]==master[1,6]+master[27,10]}}#
+	if (p==2){#
+if (master[27,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[27,10]#
+			master[1,4]==master[1,4]+master[27,10]}#
+		if (master[27,7]==3){#
+			if (master[27,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[27,10]#
+				master[1,6]==master[1,6]+master[27,10]}#
+			if (master[27,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[27,11]#
+				master[1,6]==master[1,6]+master[27,11]}#
+			if (master[27,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[27,12]#
+				master[1,6]==master[1,6]+master[27,12]}#
+			if (master[27,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[27,13]#
+				master[1,6]==master[1,6]+master[27,13]}#
+			if (master[27,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+			if (master[27,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[27,15]#
+				master[1,6]==master[1,6]+master[27,15]}}}}}}#
+if (master[1,p]==28) {#
+if (p==1){#
+if (master[28,7]==0){#
+		if (master[1,p+3]>master[28,8]){#
+			master[1,p+3]==master[1,p+3]-master[28,8]#
+			master[28,7]==1}}#
+	if (master[28,7]==3){#
+		if (master[28,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[28,10]#
+				master[1,6]==master[1,6]+master[28,10]}#
+			if (master[28,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[28,11]#
+				master[1,6]==master[1,6]+master[28,11]}#
+			if (master[28,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[28,12]#
+				master[1,6]==master[1,6]+master[28,12]}#
+			if (master[28,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[28,13]#
+				master[1,6]==master[1,6]+master[28,13]}#
+			if (master[28,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[28,14]#
+				master[1,6]==master[1,6]+master[28,14]}#
+			if (master[28,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[28,15]#
+				master[1,6]==master[1,6]+master[28,15]}#
+if (p==3){#
+if (master[28,7]==0){#
+		if (master[1,p+3]>master[28,8]){#
+			master[1,p+3]==master[1,p+3]-master[28,8]#
+			master[28,7]==1}}#
+	if (master[28,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[28,10]#
+			master[1,6]==master[1,6]+master[28,10]}}#
+	if (p==2){#
+if (master[28,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[28,10]#
+			master[1,4]==master[1,4]+master[28,10]}#
+		if (master[28,7]==3){#
+			if (master[28,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[28,10]#
+				master[1,6]==master[1,6]+master[28,10]}#
+			if (master[28,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[28,11]#
+				master[1,6]==master[1,6]+master[28,11]}#
+			if (master[28,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[28,12]#
+				master[1,6]==master[1,6]+master[28,12]}#
+			if (master[28,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[28,13]#
+				master[1,6]==master[1,6]+master[28,13]}#
+			if (master[28,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[28,14]#
+				master[1,6]==master[1,6]+master[28,14]}#
+			if (master[28,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[28,15]#
+				master[1,6]==master[1,6]+master[28,15]}}}}}}#
+if (master[1,p]==29){#
+	if (master[29,7]==0){#
+		if (master[1,p+3]>master[29,8]){#
+			master[1,p+3]==master[1,p+3]-master[29,8]#
+			master[29,7]==1}}#
+	if (master[29,7]>0){#
+		if (master[29,7]==2){#
+			if (master[29,7]==2){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,5]==master[1,5]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,5]==master[1,5]+(4*roll)}}#
+		if (master[29,7]==3){#
+			if (master[29,7]==3){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,6]==master[1,6]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,6]==master[1,6]+(4*roll)}}}}#
+#
+if (master[1,p]==30) {#
+if (p==1){#
+if (master[30,7]==0){#
+		if (master[1,p+3]>master[30,8]){#
+			master[1,p+3]==master[1,p+3]-master[30,8]#
+			master[30,7]==1}}#
+	if (master[30,7]==3){#
+		if (master[30,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[30,10]#
+				master[1,6]==master[1,6]+master[30,10]}#
+			if (master[30,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[30,11]#
+				master[1,6]==master[1,6]+master[30,11]}#
+			if (master[30,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[30,12]#
+				master[1,6]==master[1,6]+master[30,12]}#
+			if (master[30,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[30,13]#
+				master[1,6]==master[1,6]+master[30,13]}#
+			if (master[30,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[30,14]#
+				master[1,6]==master[1,6]+master[30,14]}#
+			if (master[30,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[30,15]#
+				master[1,6]==master[1,6]+master[30,15]}#
+if (p==3){#
+if (master[30,7]==0){#
+		if (master[1,p+3]>master[30,8]){#
+			master[1,p+3]==master[1,p+3]-master[30,8]#
+			master[30,7]==1}}#
+	if (master[30,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[30,10]#
+			master[1,6]==master[1,6]+master[30,10]}}#
+	if (p==2){#
+if (master[30,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[30,10]#
+			master[1,4]==master[1,4]+master[30,10]}#
+		if (master[30,7]==3){#
+			if (master[30,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[30,10]#
+				master[1,6]==master[1,6]+master[30,10]}#
+			if (master[30,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[30,11]#
+				master[1,6]==master[1,6]+master[30,11]}#
+			if (master[30,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[30,12]#
+				master[1,6]==master[1,6]+master[30,12]}#
+			if (master[30,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[30,13]#
+				master[1,6]==master[1,6]+master[30,13]}#
+			if (master[30,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[30,14]#
+				master[1,6]==master[1,6]+master[30,14]}#
+			if (master[30,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[30,15]#
+				master[1,6]==master[1,6]+master[30,15]}}}}}}#
+if (master[1,p]==31){#
+  master[1,p]=11#
+  master[1,p+18]=3#
+}#
+#
+if (master[1,p]==32) {#
+if (p==1){#
+if (master[32,7]==0){#
+		if (master[1,p+3]>master[32,8]){#
+			master[1,p+3]==master[1,p+3]-master[32,8]#
+			master[32,7]==1}}#
+	if (master[32,7]==3){#
+		if (master[32,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[32,10]#
+				master[1,6]==master[1,6]+master[32,10]}#
+			if (master[32,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[32,11]#
+				master[1,6]==master[1,6]+master[32,11]}#
+			if (master[32,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[32,12]#
+				master[1,6]==master[1,6]+master[32,12]}#
+			if (master[32,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[32,13]#
+				master[1,6]==master[1,6]+master[32,13]}#
+			if (master[32,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[32,14]#
+				master[1,6]==master[1,6]+master[32,14]}#
+			if (master[32,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[32,15]#
+				master[1,6]==master[1,6]+master[32,15]}#
+if (p==3){#
+if (master[32,7]==0){#
+		if (master[1,p+3]>master[32,8]){#
+			master[1,p+3]==master[1,p+3]-master[32,8]#
+			master[32,7]==1}}#
+	if (master[32,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[32,10]#
+			master[1,6]==master[1,6]+master[32,10]}}#
+	if (p==2){#
+if (master[32,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[32,10]#
+			master[1,4]==master[1,4]+master[32,10]}#
+		if (master[32,7]==3){#
+			if (master[32,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[32,10]#
+				master[1,6]==master[1,6]+master[32,10]}#
+			if (master[32,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[32,11]#
+				master[1,6]==master[1,6]+master[32,11]}#
+			if (master[32,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[32,12]#
+				master[1,6]==master[1,6]+master[32,12]}#
+			if (master[32,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[32,13]#
+				master[1,6]==master[1,6]+master[32,13]}#
+			if (master[32,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[32,14]#
+				master[1,6]==master[1,6]+master[32,14]}#
+			if (master[32,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[32,15]#
+				master[1,6]==master[1,6]+master[32,15]}}}}}}#
+if (master[1,p]==33) {#
+if (p==1){#
+if (master[33,7]==0){#
+		if (master[1,p+3]>master[33,8]){#
+			master[1,p+3]==master[1,p+3]-master[33,8]#
+			master[33,7]==1}}#
+	if (master[33,7]==3){#
+		if (master[33,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[33,10]#
+				master[1,6]==master[1,6]+master[33,10]}#
+			if (master[33,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[33,11]#
+				master[1,6]==master[1,6]+master[33,11]}#
+			if (master[33,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[33,12]#
+				master[1,6]==master[1,6]+master[33,12]}#
+			if (master[33,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[33,13]#
+				master[1,6]==master[1,6]+master[33,13]}#
+			if (master[33,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[33,14]#
+				master[1,6]==master[1,6]+master[33,14]}#
+			if (master[33,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[33,15]#
+				master[1,6]==master[1,6]+master[33,15]}#
+if (p==3){#
+if (master[33,7]==0){#
+		if (master[1,p+3]>master[33,8]){#
+			master[1,p+3]==master[1,p+3]-master[33,8]#
+			master[30,7]==1}}#
+	if (master[33,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[33,10]#
+			master[1,6]==master[1,6]+master[33,10]}}#
+	if (p==2){#
+if (master[33,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[33,10]#
+			master[1,4]==master[1,4]+master[33,10]}#
+		if (master[33,7]==3){#
+			if (master[33,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[33,10]#
+				master[1,6]==master[1,6]+master[33,10]}#
+			if (master[33,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[33,11]#
+				master[1,6]==master[1,6]+master[33,11]}#
+			if (master[33,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[33,12]#
+				master[1,6]==master[1,6]+master[33,12]}#
+			if (master[33,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[33,13]#
+				master[1,6]==master[1,6]+master[33,13]}#
+			if (master[33,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[33,14]#
+				master[1,6]==master[1,6]+master[33,14]}#
+			if (master[33,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[33,15]#
+				master[1,6]==master[1,6]+master[33,15]}}}}}}#
+if (master[1,p]==35) {#
+if (p==1){#
+if (master[35,7]==0){#
+		if (master[1,p+3]>master[35,8]){#
+			master[1,p+3]==master[1,p+3]-master[35,8]#
+			master[35,7]==1}}#
+	if (master[35,7]==3){#
+		if (master[35,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[35,10]#
+				master[1,6]==master[1,6]+master[35,10]}#
+			if (master[35,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[35,11]#
+				master[1,6]==master[1,6]+master[35,11]}#
+			if (master[35,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[35,12]#
+				master[1,6]==master[1,6]+master[35,12]}#
+			if (master[35,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[35,13]#
+				master[1,6]==master[1,6]+master[35,13]}#
+			if (master[35,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[35,14]#
+				master[1,6]==master[1,6]+master[35,14]}#
+			if (master[35,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[35,15]#
+				master[1,6]==master[1,6]+master[35,15]}#
+if (p==3){#
+if (master[35,7]==0){#
+		if (master[1,p+3]>master[35,8]){#
+			master[1,p+3]==master[1,p+3]-master[35,8]#
+			master[35,7]==1}}#
+	if (master[35,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[35,10]#
+			master[1,6]==master[1,6]+master[35,10]}}#
+	if (p==2){#
+if (master[35,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[35,10]#
+			master[1,4]==master[1,4]+master[35,10]}#
+		if (master[35,7]==3){#
+			if (master[35,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[35,10]#
+				master[1,6]==master[1,6]+master[35,10]}#
+			if (master[35,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[35,11]#
+				master[1,6]==master[1,6]+master[35,11]}#
+			if (master[35,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[35,12]#
+				master[1,6]==master[1,6]+master[35,12]}#
+			if (master[35,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[35,13]#
+				master[1,6]==master[1,6]+master[35,13]}#
+			if (master[35,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[35,14]#
+				master[1,6]==master[1,6]+master[35,14]}#
+			if (master[35,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[35,15]#
+				master[1,6]==master[1,6]+master[35,15]}}}}}}#
+if (master[1,p]==36) {#
+	if (p==1){#
+if (master[36,7]==0){#
+		if (master[1,p+3]>master[36,8]){#
+			master[1,p+3]==master[1,p+3]-master[36,8]#
+			master[36,7]==1#
+r_1=1}}#
+		if (master[36,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[36,7]==0){#
+		if (master[1,p+3]>master[36,8]){#
+			master[1,p+3]==master[1,p+3]-master[36,8]#
+			master[36,7]==2#
+r_2=1}}#
+		if (master[36,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[36,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[36,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+#
+if (master[1,p]==38) {#
+if (p==1){#
+if (master[38,7]==0){#
+		if (master[1,p+3]>master[38,8]){#
+			master[1,p+3]==master[1,p+3]-master[38,8]#
+			master[38,7]==1}}}#
+	if (p>1){#
+		if (master[38,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[38,10]#
+			master[1,4]==master[1,4]+master[38,10]}}}#
+if (master[1,p]==39){#
+	master[1,p+3]==master[1,p+3]-75#
+freeparking=freeparking+75}#
+#
+if (master[1,p]==40) {#
+if (p==1){#
+if (master[40,7]==0){#
+		if (master[1,p+3]>master[40,8]){#
+			master[1,p+3]==master[1,p+3]-master[40,8]#
+			master[40,7]==1}}}#
+	if (p>1){#
+		if (master[40,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[40,10]#
+			master[1,4]==master[1,4]+master[40,10]}}}#
+}#
+}#
+}
+card
+numdubs=numdubs+doubles
+if(numdubs==3) {#
+  master[1,p] = 11#
+	master[1,p+18]==3#
+} else {#
+	master[1,p] = master[1,p] +move#
+if (p==3){#
+if ((master[27,7]==3) && (master[28,7]==3) && (master[30,7]==3)){#
+if ((master[27,16]==0) && (master[28,16]==0) && (master[30,16]==0)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==1) && (master[28,16]==1) && (master[30,16]==1)}}#
+if ((master[27,16]==1) && (master[28,16]==1) && (master[30,16]==1)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==2) && (master[28,16]==2) && (master[30,16]==2)}}#
+if ((master[27,16]==2) && (master[28,16]==2) && (master[30,16]==2)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==3) && (master[28,16]==3) && (master[30,16]==3)}}#
+if ((master[27,16]==3) && (master[28,16]==3) && (master[30,16]==3)){#
+	if (master[1,6]-500>(master[27,17]+master[28,17]+master[30,17])){#
+		master[1,6]==master[1,6]-(master[27,17]+master[28,17]+master[30,17])#
+		(master[27,16]==4) && (master[28,16]==4) && (master[30,16]==4)}}#
+if ((master[27,16]==4) && (master[28,16]==4) && (master[30,16]==4)){#
+	if (master[1,6]-500>(master[27,18]+master[28,18]+master[30,18])){#
+		master[1,6]==master[1,6]-(master[27,18]+master[28,18]+master[30,18])#
+		(master[27,16]==5) && (master[28,16]==5) && (master[30,16]==5)}}}#
+if ((master[32,7]==3) && (master[33,7]==3) && (master[35,7]==3)){#
+if ((master[32,16]==0) && (master[33,16]==0) && (master[35,16]==0)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==1) && (master[33,16]==1) && (master[35,16]==1)}}#
+if ((master[32,16]==1) && (master[33,16]==1) && (master[35,16]==1)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==2) && (master[33,16]==2) && (master[35,16]==2)}}#
+if ((master[32,16]==2) && (master[33,16]==2) && (master[35,16]==2)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==3) && (master[33,16]==3) && (master[35,16]==3)}}#
+if ((master[32,16]==3) && (master[33,16]==3) && (master[35,16]==3)){#
+	if (master[1,6]-500>(master[32,17]+master[33,17]+master[35,17])){#
+		master[1,6]==master[1,6]-(master[32,17]+master[33,17]+master[35,17])#
+		(master[32,16]==4) && (master[33,16]==4) && (master[35,16]==4)}}#
+if ((master[32,16]==4) && (master[33,16]==4) && (master[35,16]==4)){#
+	if (master[1,6]-500>(master[32,18]+master[33,18]+master[35,18])){#
+		master[1,6]==master[1,6]-(master[32,18]+master[33,18]+master[35,18])#
+		(master[32,16]==5) && (master[33,16]==5) && (master[35,16]==5)}}}}	#
+	if (master[1,p]>40){#
+	master[1,p]=master[1,p]-40#
+	master[1,p+3]=master[1,p+3]+200}#
+	if (master[1,p]==2) {#
+		###PLAYER 1#########
+if (p==1){#
+if (master[2,7]==0){#
+		if (master[1,p+3]>master[2,8]){#
+			master[1,p+3]==master[1,p+3]-master[2,8]#
+			master[2,7]==1}}}#
+	###PLAYER 2/3#########
+#
+	if (p>1){#
+		if (master[2,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[2,10]#
+			master[1,4]==master[1,4]+master[2,10]}}}#
+if(master[1,p] %in% c(3,18,34)){#
+  card = communitychest[1]#
+  communitychest=communitychest[-1]#
+if (card==1){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==2){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==3){#
+  master[1,p+3]=master[1,p+3]+45}#
+if (card==4){#
+  master[1,p+3]=master[1,p+3]+200}#
+if (card==5){#
+  master[1,p+3]=master[1,p+3]-100#
+freeparking=freeparking+100}#
+if (card==6){#
+  master[1,p+3]=master[1,p+3]-50#
+freeparking=freeparking+50}#
+if (card==7){master[1,p+21]=master[1,p+21]+1#
+  }#
+if (card==8){#
+  master[1,p+3]=master[1,p+3]+25}#
+if (card==9){#
+  master[1,p+3]=master[1,p+3]-150#
+freeparking=freeparking+150}#
+if (card==10){#
+  master[1,p]=1#
+  master[1,p+3]=master[1,p+3]+200}#
+if (card==11){#
+  master[1,p+3]=master[1,p+3]+10}#
+if (card==12){#
+  master[1,p+3]=master[1,p+3]+150#
+if (card==13){#
+  master[1,p+3]=master[1,p+3]+20}#
+if (card==14){master[1,p+3]=master[1,p+3]-40*h-115*H#
+	freeparking=freeparking+40*h+115*H#
+  }#
+if (card==15){#
+  master[1,p+3]=master[1,p+3]+100}#
+if (card==16){#
+  master[1,p]=11#
+  master[1,p+18]=3}#
+}}#
+if (master[1,p]==4) {#
+	###PLAYER 1#########
+#
+if (p==1){#
+if (master[4,7]==0){#
+		if (master[1,p+3]>master[4,8]){#
+			master[1,p+3]==master[1,p+3]-master[4,8]#
+			master[4,7]==1}}}#
+			###PLAYER 2/3#########
+#
+	if ( p>1){#
+		if (master[4,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[4,10]#
+			master[1,4]==master[1,4]+master[4,10]}}}#
+if (master[1,p]==5){#
+	master[1,p+3]==master[1,p+3]-200#
+freeparking=freeparking+200}#
+if (master[1,p]==6) {#
+	###PLAYER 1#########
+	if (p==1){#
+if (master[6,7]==0){#
+		if (master[1,p+3]>master[6,8]){#
+			master[1,p+3]==master[1,p+3]-master[6,8]#
+			master[6,7]==1#
+r_1=1}}#
+		if (master[6,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+		###PLAYER 2#########
+	if (p==2){#
+		if (master[6,7]==0){#
+		if (master[1,p+3]>master[6,8]){#
+			master[1,p+3]==master[1,p+3]-master[6,8]#
+			master[6,7]==2#
+r_2=1}}#
+		if (master[6,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+###PLAYER 3#########
+	if (p==3){#
+		if (master[6,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[6,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+if (master[1,p]==7) {#
+if (p==1){#
+if (master[7,7]==0){#
+		if (master[1,p+3]>master[7,8]){#
+			master[1,p+3]==master[1,p+3]-master[7,8]#
+			master[7,7]==1}}}#
+	if ( p>1){#
+		if (master[7,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[7,10]#
+			master[1,4]==master[1,4]+master[7,10]}}}#
+if (master[1,p] %in% c(8,37,23)){#
+card = chance[1]#
+chance=chance[-1]#
+ if (card==1){#
+   master[1,p]=1#
+   master[1,p+3] = master[1,p+3]+200}#
+ if (card==2){#
+   master[1,p+3]=master[1,p+3]+50}#
+ if (card==3){#
+   master[1,p]=11#
+   master[1,p+18]=3}#
+ if (card==4){#
+   master[1,p+3]=master[1,p+3]-150#
+        	master[1,4]=master[1,4]+50#
+        	master[1,5]=master[1,5]+50#
+master[1,6]=master[1,6]+50}#
+ if (card==5){#
+if (master[1,p] %in% c(37:40,1:6)) {master[1,p]=6#
+        	if (master[6,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[6,7]==2){#
+        	{master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(7:16))#
+{master[1,p]==16#
+        	if (master[16,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[16,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(17:26))#
+{master[1,p]=26#
+        	if (master[26,7]==1){#
+        	{{master[1,4]={master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[26,7]==2){#
+        	{{master[1,5]={master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(27:36))#
+{master[1,p]=36#
+        	if (master[36,7]==1){#
+        	master[1,4]={master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[36,7]==5){#
+        	master[1,5]={master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}#
+        	}#
+ if (card==6){master[1,p]=25}#
+ if (card==7){master[1,p]=master[1,p]-3}#
+ if (card==8){master[1,p+3]=master[1,p+3]-15#
+freeparking=freeparking+15}#
+ if (card==9){#
+if (master[1,p] %in% c(37:40,1:6)) {master[1,p]=6#
+        	if (master[6,7]==1){#
+        	{master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}}#
+        	if (master[6,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(7:16))#
+{master[1,p]==16#
+        	if (master[16,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[16,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(17:26))#
+{master[1,p]=26#
+        	if (master[26,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[26,7]==2){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+if (master[1,p] %in% c(27:36))#
+{master[1,p]=36#
+        	if (master[36,7]==1){#
+        	master[1,4]=master[1,4]+100*r_1#
+        	master[1,p+3]=master[1,p+3]-100*r_1}#
+        	if (master[36,7]==5){#
+        	master[1,5]=master[1,5]+100*r_2#
+        	master[1,p+3]=master[1,p+3]-100*r_2}}#
+ if (card==10){master[1,p]=40}#
+ if (card==11){#
+master[1,p+21]=master[1,p+21]+1}#
+ if (card==12){#
+if (master[1,p] %in% c(29:40,1:13))#
+{master[1,p]==13}#
+if (master[13,7]==1){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,4]=master[1,4]+(10*roll)}#
+if (master[13,7]==2){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,5]=master[1,5]+(10*roll)}#
+if (master[1,p] %in% c(13:29)){#
+master[1,p]=29}#
+if (master[29,7]==1){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,4]=master[1,4]+(10*roll)}#
+if (master[29,7]==2){#
+master[1,p+3]=master[1,p+3]-(10*roll)#
+master[1,5]=master[1,5]+(10*roll)}}#
+ if (card==13){master[1,p]=12}#
+ if (card==14){master[1,p]=6}#
+ if (card==15){master[1,p+3]=master[1,p+3]+150}#
+ if (card==16){master[1,p+3]=master[1,p+3]-25*h-100*H#
+freeparking=25*h+100*H}#
+}}}}}}}}}}}}}}#
+if (master[1,p]==9) {#
+if (p==1){#
+if (master[9,7]==0){#
+		if (master[1,p+3]>master[9,8]){#
+			master[1,p+3]==master[1,p+3]-master[9,8]#
+			master[9,7]==1}}}#
+	if (p>1){#
+		if (master[9,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[9,10]#
+			master[1,4]==master[1,4]+master[9,10]}}}#
+if (master[1,p]==10) {#
+if (p==1){#
+if (master[10,7]==0){#
+		if (master[1,p+3]>master[10,8]){#
+			master[1,p+3]==master[1,p+3]-master[10,8]#
+			master[10,7]==1}}}#
+	if (p>1){#
+		if (master[10,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[10,10]#
+			master[1,4]==master[1,4]+master[10,10]}}}#
+if (master[1,p]==11 && (master[1,p+18]==0)) { #
+	if (doubles==1){#
+		master[1,p+18]=0#
+master[1,p]==master[1,p]+move}#
+	if (doubles==0){#
+	master[1,p+18]==master[1,p+18]-1#
+master[1,p]==11}#
+}	#
+if (master[1,p]==12) {#
+if (p==1){#
+if (master[12,7]==0){#
+		if (master[1,p+3]>master[12,8]){#
+			master[1,p+3]==master[1,p+3]-master[12,8]#
+			master[12,7]==1}}}#
+	if (p>1){#
+		if (master[12,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[12,10]#
+			master[1,4]==master[1,4]+master[12,10]}}}#
+if (master[1,p]==13){#
+	if (master[13,7]==0){#
+		if (master[1,p+3]>master[13,8]){#
+			master[1,p+3]==master[1,p+3]-master[13,8]#
+			master[13,7]==1}}#
+	if (master[13,7]>0){#
+		if (master[13,7]==2){#
+			if (master[29,7]==2){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,5]==master[1,5]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,5]==master[1,5]+(4*roll)}}#
+		if (master[13,7]==3){#
+			if (master[29,7]==3){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,6]==master[1,6]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,6]==master[1,6]+(4*roll)}}}#
+#
+if (master[1,p]==14) {#
+if (p==1){#
+if (master[14,7]==0){#
+		if (master[1,p+3]>master[14,8]){#
+			master[1,p+3]==master[1,p+3]-master[14,8]#
+			master[14,7]==1}}}#
+	if (p>1){#
+		if (master[14,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[14,10]#
+			master[1,4]==master[1,4]+master[14,10]}}}#
+if (master[1,p]==15) {#
+if (p==1){#
+if (master[15,7]==0){#
+		if (master[1,p+3]>master[15,8]){#
+			master[1,p+3]==master[1,p+3]-master[15,8]#
+			master[15,7]==1}}}#
+	if (p>1){#
+		if (master[15,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[15,10]#
+			master[1,4]==master[1,4]+master[15,10]}}}#
+if (master[1,p]==16) {#
+	if (p==1){#
+if (master[16,7]==0){#
+		if (master[1,p+3]>master[16,8]){#
+			master[1,p+3]==master[1,p+3]-master[16,8]#
+			master[16,7]==1#
+r_1=1}}#
+		if (master[16,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[16,7]==0){#
+		if (master[1,p+3]>master[16,8]){#
+			master[1,p+3]==master[1,p+3]-master[16,8]#
+			master[16,7]==2#
+r_2=1}}#
+		if (master[16,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+if (master[1,p]==17) {#
+if (p==1){#
+if (master[17,7]==0){#
+		if (master[1,p+3]>master[17,8]){#
+			master[1,p+3]==master[1,p+3]-master[17,8]#
+			master[17,7]==1}}}#
+	if (p>1){#
+		if (master[17,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[17,10]#
+			master[1,4]==master[1,4]+master[17,10]}}}#
+#
+if (master[1,p]==19) {#
+if (p==1){#
+if (master[19,7]==0){#
+		if (master[1,p+3]>master[19,8]){#
+			master[1,p+3]==master[1,p+3]-master[19,8]#
+			master[19,7]==1}}}#
+	if (p>1){#
+		if (master[19,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[19,10]#
+			master[1,4]==master[1,4]+master[19,10]}}}#
+if (master[1,p]==20) {#
+if (p==1){#
+if (master[20,7]==0){#
+		if (master[1,p+3]>master[20,8]){#
+			master[1,p+3]==master[1,p+3]-master[20,8]#
+			master[20,7]==1}}}#
+	if (p>1){#
+		if (master[20,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[20,10]#
+			master[1,4]==master[1,4]+master[20,10]}}}#
+if (master[1,p]==21){#
+	master[1,p+3]=master[1,p+3]+freeparking}#
+if (master[1,p]==22) {#
+if (p==1){#
+if (master[22,7]==0){#
+		if (master[1,p+3]>master[22,8]){#
+			master[1,p+3]==master[1,p+3]-master[22,8]#
+			master[22,7]==1}}}#
+	if (p>1){#
+		if (master[22,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[22,10]#
+			master[1,4]==master[1,4]+master[22,10]}}}#
+#
+if (master[1,p]==24) {#
+if (p==1){#
+if (master[24,7]==0){#
+		if (master[1,p+3]>master[24,8]){#
+			master[1,p+3]==master[1,p+3]-master[24,8]#
+			master[24,7]==1}}}#
+	if (p>1){#
+		if (master[24,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[24,10]#
+			master[1,4]==master[1,4]+master[24,10]}}}#
+if (master[1,p]==25) {#
+if (p==1){#
+if (master[25,7]==0){#
+		if (master[1,p+3]>master[25,8]){#
+			master[1,p+3]==master[1,p+3]-master[25,8]#
+			master[25,7]==1}}}#
+	if (p>1){#
+		if (master[25,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[25,10]#
+			master[1,4]==master[1,4]+master[25,10]}}}#
+if (master[1,p]==26) {#
+	if (p==1){#
+if (master[26,7]==0){#
+		if (master[1,p+3]>master[26,8]){#
+			master[1,p+3]==master[1,p+3]-master[26,8]#
+			master[26,7]==1#
+r_1=1}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[26,7]==0){#
+		if (master[1,p+3]>master[26,8]){#
+			master[1,p+3]==master[1,p+3]-master[26,8]#
+			master[26,7]==2#
+r_2=1}}#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[26,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[26,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+if (master[1,p]==27) {#
+if (p==1){#
+if (master[27,7]==0){#
+		if (master[1,p+3]>master[27,8]){#
+			master[1,p+3]==master[1,p+3]-master[27,8]#
+			master[27,7]==1}}#
+	if (master[27,7]==3){#
+		if (master[27,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[27,10]#
+				master[1,6]==master[1,6]+master[27,10]}#
+			if (master[27,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[27,11]#
+				master[1,6]==master[1,6]+master[27,11]}#
+			if (master[27,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[27,12]#
+				master[1,6]==master[1,6]+master[27,12]}#
+			if (master[27,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[27,13]#
+				master[1,6]==master[1,6]+master[27,13]}#
+			if (master[27,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+			if (master[27,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+if (p==3){#
+if (master[27,7]==0){#
+		if (master[1,p+3]>master[27,8]){#
+			master[1,p+3]==master[1,p+3]-master[27,8]#
+			master[27,7]==1}}#
+	if (master[27,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[27,10]#
+			master[1,6]==master[1,6]+master[27,10]}}#
+	if (p==2){#
+if (master[27,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[27,10]#
+			master[1,4]==master[1,4]+master[27,10]}#
+		if (master[27,7]==3){#
+			if (master[27,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[27,10]#
+				master[1,6]==master[1,6]+master[27,10]}#
+			if (master[27,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[27,11]#
+				master[1,6]==master[1,6]+master[27,11]}#
+			if (master[27,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[27,12]#
+				master[1,6]==master[1,6]+master[27,12]}#
+			if (master[27,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[27,13]#
+				master[1,6]==master[1,6]+master[27,13]}#
+			if (master[27,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[27,14]#
+				master[1,6]==master[1,6]+master[27,14]}#
+			if (master[27,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[27,15]#
+				master[1,6]==master[1,6]+master[27,15]}}}}}}#
+if (master[1,p]==28) {#
+if (p==1){#
+if (master[28,7]==0){#
+		if (master[1,p+3]>master[28,8]){#
+			master[1,p+3]==master[1,p+3]-master[28,8]#
+			master[28,7]==1}}#
+	if (master[28,7]==3){#
+		if (master[28,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[28,10]#
+				master[1,6]==master[1,6]+master[28,10]}#
+			if (master[28,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[28,11]#
+				master[1,6]==master[1,6]+master[28,11]}#
+			if (master[28,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[28,12]#
+				master[1,6]==master[1,6]+master[28,12]}#
+			if (master[28,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[28,13]#
+				master[1,6]==master[1,6]+master[28,13]}#
+			if (master[28,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[28,14]#
+				master[1,6]==master[1,6]+master[28,14]}#
+			if (master[28,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[28,15]#
+				master[1,6]==master[1,6]+master[28,15]}#
+if (p==3){#
+if (master[28,7]==0){#
+		if (master[1,p+3]>master[28,8]){#
+			master[1,p+3]==master[1,p+3]-master[28,8]#
+			master[28,7]==1}}#
+	if (master[28,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[28,10]#
+			master[1,6]==master[1,6]+master[28,10]}}#
+	if (p==2){#
+if (master[28,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[28,10]#
+			master[1,4]==master[1,4]+master[28,10]}#
+		if (master[28,7]==3){#
+			if (master[28,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[28,10]#
+				master[1,6]==master[1,6]+master[28,10]}#
+			if (master[28,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[28,11]#
+				master[1,6]==master[1,6]+master[28,11]}#
+			if (master[28,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[28,12]#
+				master[1,6]==master[1,6]+master[28,12]}#
+			if (master[28,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[28,13]#
+				master[1,6]==master[1,6]+master[28,13]}#
+			if (master[28,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[28,14]#
+				master[1,6]==master[1,6]+master[28,14]}#
+			if (master[28,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[28,15]#
+				master[1,6]==master[1,6]+master[28,15]}}}}}}#
+if (master[1,p]==29){#
+	if (master[29,7]==0){#
+		if (master[1,p+3]>master[29,8]){#
+			master[1,p+3]==master[1,p+3]-master[29,8]#
+			master[29,7]==1}}#
+	if (master[29,7]>0){#
+		if (master[29,7]==2){#
+			if (master[29,7]==2){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,5]==master[1,5]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,5]==master[1,5]+(4*roll)}}#
+		if (master[29,7]==3){#
+			if (master[29,7]==3){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,6]==master[1,6]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,6]==master[1,6]+(4*roll)}}}}#
+#
+if (master[1,p]==30) {#
+if (p==1){#
+if (master[30,7]==0){#
+		if (master[1,p+3]>master[30,8]){#
+			master[1,p+3]==master[1,p+3]-master[30,8]#
+			master[30,7]==1}}#
+	if (master[30,7]==3){#
+		if (master[30,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[30,10]#
+				master[1,6]==master[1,6]+master[30,10]}#
+			if (master[30,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[30,11]#
+				master[1,6]==master[1,6]+master[30,11]}#
+			if (master[30,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[30,12]#
+				master[1,6]==master[1,6]+master[30,12]}#
+			if (master[30,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[30,13]#
+				master[1,6]==master[1,6]+master[30,13]}#
+			if (master[30,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[30,14]#
+				master[1,6]==master[1,6]+master[30,14]}#
+			if (master[30,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[30,15]#
+				master[1,6]==master[1,6]+master[30,15]}#
+if (p==3){#
+if (master[30,7]==0){#
+		if (master[1,p+3]>master[30,8]){#
+			master[1,p+3]==master[1,p+3]-master[30,8]#
+			master[30,7]==1}}#
+	if (master[30,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[30,10]#
+			master[1,6]==master[1,6]+master[30,10]}}#
+	if (p==2){#
+if (master[30,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[30,10]#
+			master[1,4]==master[1,4]+master[30,10]}#
+		if (master[30,7]==3){#
+			if (master[30,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[30,10]#
+				master[1,6]==master[1,6]+master[30,10]}#
+			if (master[30,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[30,11]#
+				master[1,6]==master[1,6]+master[30,11]}#
+			if (master[30,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[30,12]#
+				master[1,6]==master[1,6]+master[30,12]}#
+			if (master[30,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[30,13]#
+				master[1,6]==master[1,6]+master[30,13]}#
+			if (master[30,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[30,14]#
+				master[1,6]==master[1,6]+master[30,14]}#
+			if (master[30,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[30,15]#
+				master[1,6]==master[1,6]+master[30,15]}}}}}}#
+if (master[1,p]==31){#
+  master[1,p]=11#
+  master[1,p+18]=3#
+}#
+#
+if (master[1,p]==32) {#
+if (p==1){#
+if (master[32,7]==0){#
+		if (master[1,p+3]>master[32,8]){#
+			master[1,p+3]==master[1,p+3]-master[32,8]#
+			master[32,7]==1}}#
+	if (master[32,7]==3){#
+		if (master[32,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[32,10]#
+				master[1,6]==master[1,6]+master[32,10]}#
+			if (master[32,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[32,11]#
+				master[1,6]==master[1,6]+master[32,11]}#
+			if (master[32,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[32,12]#
+				master[1,6]==master[1,6]+master[32,12]}#
+			if (master[32,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[32,13]#
+				master[1,6]==master[1,6]+master[32,13]}#
+			if (master[32,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[32,14]#
+				master[1,6]==master[1,6]+master[32,14]}#
+			if (master[32,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[32,15]#
+				master[1,6]==master[1,6]+master[32,15]}#
+if (p==3){#
+if (master[32,7]==0){#
+		if (master[1,p+3]>master[32,8]){#
+			master[1,p+3]==master[1,p+3]-master[32,8]#
+			master[32,7]==1}}#
+	if (master[32,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[32,10]#
+			master[1,6]==master[1,6]+master[32,10]}}#
+	if (p==2){#
+if (master[32,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[32,10]#
+			master[1,4]==master[1,4]+master[32,10]}#
+		if (master[32,7]==3){#
+			if (master[32,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[32,10]#
+				master[1,6]==master[1,6]+master[32,10]}#
+			if (master[32,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[32,11]#
+				master[1,6]==master[1,6]+master[32,11]}#
+			if (master[32,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[32,12]#
+				master[1,6]==master[1,6]+master[32,12]}#
+			if (master[32,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[32,13]#
+				master[1,6]==master[1,6]+master[32,13]}#
+			if (master[32,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[32,14]#
+				master[1,6]==master[1,6]+master[32,14]}#
+			if (master[32,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[32,15]#
+				master[1,6]==master[1,6]+master[32,15]}}}}}}#
+if (master[1,p]==33) {#
+if (p==1){#
+if (master[33,7]==0){#
+		if (master[1,p+3]>master[33,8]){#
+			master[1,p+3]==master[1,p+3]-master[33,8]#
+			master[33,7]==1}}#
+	if (master[33,7]==3){#
+		if (master[33,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[33,10]#
+				master[1,6]==master[1,6]+master[33,10]}#
+			if (master[33,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[33,11]#
+				master[1,6]==master[1,6]+master[33,11]}#
+			if (master[33,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[33,12]#
+				master[1,6]==master[1,6]+master[33,12]}#
+			if (master[33,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[33,13]#
+				master[1,6]==master[1,6]+master[33,13]}#
+			if (master[33,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[33,14]#
+				master[1,6]==master[1,6]+master[33,14]}#
+			if (master[33,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[33,15]#
+				master[1,6]==master[1,6]+master[33,15]}#
+if (p==3){#
+if (master[33,7]==0){#
+		if (master[1,p+3]>master[33,8]){#
+			master[1,p+3]==master[1,p+3]-master[33,8]#
+			master[30,7]==1}}#
+	if (master[33,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[33,10]#
+			master[1,6]==master[1,6]+master[33,10]}}#
+	if (p==2){#
+if (master[33,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[33,10]#
+			master[1,4]==master[1,4]+master[33,10]}#
+		if (master[33,7]==3){#
+			if (master[33,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[33,10]#
+				master[1,6]==master[1,6]+master[33,10]}#
+			if (master[33,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[33,11]#
+				master[1,6]==master[1,6]+master[33,11]}#
+			if (master[33,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[33,12]#
+				master[1,6]==master[1,6]+master[33,12]}#
+			if (master[33,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[33,13]#
+				master[1,6]==master[1,6]+master[33,13]}#
+			if (master[33,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[33,14]#
+				master[1,6]==master[1,6]+master[33,14]}#
+			if (master[33,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[33,15]#
+				master[1,6]==master[1,6]+master[33,15]}}}}}}#
+if (master[1,p]==35) {#
+if (p==1){#
+if (master[35,7]==0){#
+		if (master[1,p+3]>master[35,8]){#
+			master[1,p+3]==master[1,p+3]-master[35,8]#
+			master[35,7]==1}}#
+	if (master[35,7]==3){#
+		if (master[35,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[35,10]#
+				master[1,6]==master[1,6]+master[35,10]}#
+			if (master[35,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[35,11]#
+				master[1,6]==master[1,6]+master[35,11]}#
+			if (master[35,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[35,12]#
+				master[1,6]==master[1,6]+master[35,12]}#
+			if (master[35,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[35,13]#
+				master[1,6]==master[1,6]+master[35,13]}#
+			if (master[35,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[35,14]#
+				master[1,6]==master[1,6]+master[35,14]}#
+			if (master[35,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[35,15]#
+				master[1,6]==master[1,6]+master[35,15]}#
+if (p==3){#
+if (master[35,7]==0){#
+		if (master[1,p+3]>master[35,8]){#
+			master[1,p+3]==master[1,p+3]-master[35,8]#
+			master[35,7]==1}}#
+	if (master[35,7]==1){#
+		master[1,p+3]==master[1,p+3]-master[35,10]#
+			master[1,6]==master[1,6]+master[35,10]}}#
+	if (p==2){#
+if (master[35,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[35,10]#
+			master[1,4]==master[1,4]+master[35,10]}#
+		if (master[35,7]==3){#
+			if (master[35,16]==0){#
+				master[1,p+3]==master[1,p+3]-master[35,10]#
+				master[1,6]==master[1,6]+master[35,10]}#
+			if (master[35,16]==1){#
+				master[1,p+3]==master[1,p+3]-master[35,11]#
+				master[1,6]==master[1,6]+master[35,11]}#
+			if (master[35,16]==2){#
+				master[1,p+3]==master[1,p+3]-master[35,12]#
+				master[1,6]==master[1,6]+master[35,12]}#
+			if (master[35,16]==3){#
+				master[1,p+3]==master[1,p+3]-master[35,13]#
+				master[1,6]==master[1,6]+master[35,13]}#
+			if (master[35,16]==4){#
+				master[1,p+3]==master[1,p+3]-master[35,14]#
+				master[1,6]==master[1,6]+master[35,14]}#
+			if (master[35,16]==5){#
+				master[1,p+3]==master[1,p+3]-master[35,15]#
+				master[1,6]==master[1,6]+master[35,15]}}}}}}#
+if (master[1,p]==36) {#
+	if (p==1){#
+if (master[36,7]==0){#
+		if (master[1,p+3]>master[36,8]){#
+			master[1,p+3]==master[1,p+3]-master[36,8]#
+			master[36,7]==1#
+r_1=1}}#
+		if (master[36,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}#
+	if (p==2){#
+		if (master[36,7]==0){#
+		if (master[1,p+3]>master[36,8]){#
+			master[1,p+3]==master[1,p+3]-master[36,8]#
+			master[36,7]==2#
+r_2=1}}#
+		if (master[36,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}}#
+#
+	if (p==3){#
+		if (master[36,7]==1){#
+			if (r_1==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,4]==master[1,4]+25}#
+			if (r_1==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,4]==master[1,4]+50}	#
+			if (r_1==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,4]==master[1,4]+100}#
+			if (r_1==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,4]==master[1,4]+200}}#
+		if (master[36,7]==2){#
+			if (r_2==1){#
+				master[1,p+3]==master[1,p+3]-25#
+				master[1,5]==master[1,5]+25}#
+			if (r_2==2){#
+				master[1,p+3]==master[1,p+3]-50#
+				master[1,5]==master[1,5]+50}	#
+			if (r_2==3){#
+				master[1,p+3]==master[1,p+3]-100#
+				master[1,5]==master[1,5]+100}#
+			if (r_2==4){#
+				master[1,p+3]==master[1,p+3]-200#
+				master[1,5]==master[1,5]+200}}}}#
+#
+if (master[1,p]==38) {#
+if (p==1){#
+if (master[38,7]==0){#
+		if (master[1,p+3]>master[38,8]){#
+			master[1,p+3]==master[1,p+3]-master[38,8]#
+			master[38,7]==1}}}#
+	if (p>1){#
+		if (master[38,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[38,10]#
+			master[1,4]==master[1,4]+master[38,10]}}}#
+if (master[1,p]==39){#
+	master[1,p+3]==master[1,p+3]-75#
+freeparking=freeparking+75}#
+#
+if (master[1,p]==40) {#
+if (p==1){#
+if (master[40,7]==0){#
+		if (master[1,p+3]>master[40,8]){#
+			master[1,p+3]==master[1,p+3]-master[40,8]#
+			master[40,7]==1}}}#
+	if (p>1){#
+		if (master[40,7]==1){#
+			master[1,p+3]==master[1,p+3]-master[40,10]#
+			master[1,4]==master[1,4]+master[40,10]}}}#
+}#
+}#
+}
+master
+#-------------------------------------------------------------------------------------------#
+##
+#					Initialize Master Matrix #
+##
+#-------------------------------------------------------------------------------------------#
+#
+master=matrix(0,40,24)#
+master[1,1:3]=1#
+master[1,4:6]=1500#
+master[2,8]=60#
+master[4,8]=60#
+master[6,8]=200#
+master[7,8]=100#
+master[9,8]=100#
+master[10,8]=120#
+master[12,8]=140#
+master[13,8]=150#
+master[14,8]=140#
+master[15,8]=160#
+master[16,8]=200#
+master[17,8]=180#
+master[19,8]=180#
+master[20,8]=200#
+master[22,8]=220#
+master[24,8]=220#
+master[25,8]=240#
+master[26,8]=200#
+master[27,8]=260#
+master[28,8]=260#
+master[29,8]=150#
+master[30,8]=280#
+master[32,8]=300#
+master[33,8]=300#
+master[35,8]=320#
+master[36,8]=200#
+master[38,8]=350#
+master[40,8]=400#
+master[2,9]=1#
+master[4,9]=1#
+master[7,9]=2#
+master[9,9]=2#
+master[10,9]=2#
+master[11,9]=9#
+master[12,9]=3#
+master[14,9]=3#
+master[15,9]=3#
+master[17,9]=4#
+master[19,9]=4#
+master[20,9]=4#
+master[22,9]=5#
+master[24,9]=5#
+master[25,9]=5#
+master[27,9]=6#
+master[28,9]=6#
+master[30,9]=6#
+master[31,9]=9#
+master[32,9]=7#
+master[33,9]=7#
+master[35,9]=7#
+master[38,9]=8#
+master[40,9]=8#
+master[6,9]=10#
+master[16,9]=10#
+master[26,9]=10#
+master[36,9]=10#
+master[2,10]=2#
+master[4,10]=4#
+master[5,10]=200#
+master[6,10]=25#
+master[7,10]=6#
+master[9,10]=6#
+master[10,10]=8#
+master[12,10]=10#
+master[14,10]=10#
+master[15,10]=12#
+master[16,10]=25#
+master[17,10]=14#
+master[19,10]=14#
+master[20,10]=16#
+master[22,10]=18#
+master[24,10]=20#
+master[25,10]=20#
+master[26,10]=25#
+master[27,10]=22#
+master[28,10]=22#
+master[30,10]=24#
+master[32,10]=26#
+master[33,10]=26#
+master[35,10]=28#
+master[36,10]=25#
+master[38,10]=35#
+master[39,10]=75#
+master[40,10]=50#
+master[2,11]=10#
+master[4,11]=20#
+master[7,11]=30#
+master[9,11]=30#
+master[10,11]=40#
+master[12,11]=50#
+master[14,11]=50#
+master[15,11]=60#
+master[17,11]=70#
+master[19,11]=70#
+master[20,11]=80#
+master[22,11]=90#
+master[24,11]=90#
+master[25,11]=100#
+master[27,11]=110#
+master[28,11]=110#
+master[30,11]=120#
+master[32,11]=130#
+master[33,11]=130#
+master[35,11]=150#
+master[38,11]=175#
+master[40,11]=200#
+master[2,12]=30#
+master[4,12]=60#
+master[7,12]=90#
+master[9,12]=90#
+master[10,12]=100#
+master[12,12]=150#
+master[14,12]=150#
+master[15,12]=180#
+master[17,12]=200#
+master[19,12]=200#
+master[20,12]=220#
+master[22,12]=250#
+master[24,12]=250#
+master[25,12]=300#
+master[27,12]=330#
+master[28,12]=330#
+master[30,12]=360#
+master[32,12]=390#
+master[33,12]=390#
+master[35,12]=450#
+master[38,12]=500#
+master[40,12]=600#
+master[2,13]=90#
+master[4,13]=180#
+master[7,13]=270#
+master[9,13]=270#
+master[10,13]=300#
+master[12,13]=450#
+master[14,13]=450#
+master[15,13]=500#
+master[17,13]=550#
+master[19,13]=550#
+master[20,13]=600#
+master[22,13]=700#
+master[24,13]=700#
+master[25,13]=750#
+master[27,13]=800#
+master[28,13]=800#
+master[30,13]=850#
+master[32,13]=900#
+master[33,13]=900#
+master[35,13]=1000#
+master[38,13]=1100#
+master[40,13]=1400#
+master[2,14]=160#
+master[4,14]=320#
+master[7,14]=400#
+master[9,14]=400#
+master[10,14]=450#
+master[12,14]=625#
+master[14,14]=625#
+master[15,14]=700#
+master[17,14]=750#
+master[19,14]=750#
+master[20,14]=800#
+master[22,14]=875#
+master[24,14]=875#
+master[25,14]=925#
+master[27,14]=975#
+master[28,14]=975#
+master[30,14]=1025#
+master[32,14]=1100#
+master[33,14]=1100#
+master[35,14]=1200#
+master[38,14]=1300#
+master[40,14]=1700#
+master[2,15]=250#
+master[4,15]=450#
+master[7,15]=550#
+master[9,15]=550#
+master[10,15]=600#
+master[12,15]=750#
+master[14,15]=750#
+master[15,15]=900#
+master[17,15]=950#
+master[19,15]=950#
+master[20,15]=1000#
+master[22,15]=1050#
+master[24,15]=1050#
+master[25,15]=1100#
+master[27,15]=1150#
+master[28,15]=1150#
+master[30,15]=1200#
+master[32,15]=1275#
+master[33,15]=1275#
+master[35,15]=1400#
+master[38,15]=1500#
+master[40,15]=2000#
+master[2,17]=50#
+master[4,17]=50#
+master[7,17]=50#
+master[9,17]=50#
+master[10,17]=50#
+master[12,17]=100#
+master[14,17]=100#
+master[15,17]=100#
+master[17,17]=100#
+master[19,17]=100#
+master[20,17]=100#
+master[22,17]=150#
+master[24,17]=150#
+master[25,17]=150#
+master[27,17]=150#
+master[28,17]=150#
+master[30,17]=150 #
+master[32,17]=200#
+master[33,17]=200#
+master[35,17]=200#
+master[38,17]=200#
+master[40,17]=200#
+master[2,18]=200#
+master[4,18]=200#
+master[7,18]=200#
+master[9,18]=200#
+master[10,18]=200#
+master[12,18]=400#
+master[14,18]=400#
+master[15,18]=400#
+master[17,18]=400#
+master[19,18]=400#
+master[20,18]=400#
+master[22,18]=600#
+master[24,18]=600#
+master[25,18]=600#
+master[27,18]=600#
+master[28,18]=600#
+master[30,18]=600#
+master[32,18]=800#
+master[33,18]=800#
+master[35,18]=800#
+master[38,18]=800#
+master[40,18]=800
+numdubs=numdubs+doubles
+numbdubs
+numdubs=numdubs+doubles
+numdubs
+numdubs=0
+doubles
+numdubs=numdubs+1
+numbdubs
+numdubs
+master[1,p] = master[1,p] +move
+master
+if (master[1,p]==13){#
+	if (master[13,7]==0){#
+		if (master[1,p+3]>master[13,8]){#
+			master[1,p+3]==master[1,p+3]-master[13,8]#
+			master[13,7]==1}}#
+	if (master[13,7]>0){#
+		if (master[13,7]==2){#
+			if (master[29,7]==2){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,5]==master[1,5]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,5]==master[1,5]+(4*roll)}}#
+		if (master[13,7]==3){#
+			if (master[29,7]==3){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,6]==master[1,6]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,6]==master[1,6]+(4*roll)}}}#
+}
+master
+if (master[1,p]==13){#
+	if (master[13,7]==0){#
+		if (master[1,p+3]>master[13,8]){#
+			master[1,p+3]=master[1,p+3]-master[13,8]#
+			master[13,7]=1}}#
+	if (master[13,7]>0){#
+		if (master[13,7]==2){#
+			if (master[29,7]==2){#
+				master[1,p+3]=master[1,p+3]-(10*roll)#
+				master[1,5]=master[1,5]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,5]==master[1,5]+(4*roll)}}#
+		if (master[13,7]==3){#
+			if (master[29,7]==3){#
+				master[1,p+3]==master[1,p+3]-(10*roll)#
+				master[1,6]==master[1,6]+(10*roll)}#
+			else {#
+master[1,p+3]==master[1,p+3]-(4*roll)#
+master[1,6]==master[1,6]+(4*roll)}}}#
+}
+master
+col = c("black", "navy", "yellow")
+sample(col)
+sample(col,1)
+library("swirl")
+library(swirl)
+install.packages("swirl")
+library("swirlf")
+library("swirl")
+swirl()
+qnorm(.01)
+(7/100)*(1 - 7/100)/100
+sqrt((7/100)*(1 - 7/100)/100)
+2.33*sqrt((7/100)*(1 - 7/100)/100)
+7/100 - 2.33*sqrt((7/100)*(1 - 7/100)/100)
+7/100 + 2.33*sqrt((7/100)*(1 - 7/100)/100)
+qnorm(.03)
+qt(.03, 24)
+72 + qt(.02, 24)*
+4
+72 - qt(.02, 24)*4
+qt(.02, 24)
+72 - qt(.02, 24)*4/sqrt(25)
+72 + qt(.02, 24)*4/sqrt(25)
+qt(.02, 24)
+whichSchool
+length(index)
+pnorm(-5/3)
+library("swirl")
+swirl()
+library("swirl")
+swirl()
+clear
+swirl()
+library("swirl")
+swirl()
+q()
+install.packages("swirl")
+library("swirl")
+swirl()
+factorial(9)^2
+10^3
+10^8
+library("swirl")
+swirl()
+sample(c("Josh", "Ben"),1)
+treelet_prep_cv = funtion(grm_name, num_test = 50){#
+	#--------------------------------#
+	#Check for errors in the grm file#
+	#--------------------------------#
+	if(is.na(grm_name)){#
+		stop("please specify grm file name \n this should be in the current directory")#
+	}	#
+	#-------------------------------------------#
+	# read in SNP file #
+	#-------------------------------------------#
+	snp_name = paste(grm_name, ".bim", sep = "")#
+	snps = as.matrix(read.table(snp_name))[,2]#
+	if(!exists("snps")){#
+		stop("couldn't find the file")#
+	}#
+	#--------------------------------#
+	#Make training and testing sets#
+	#--------------------------------#
+	message("writting out testing/training sets")#
+	#get train/test indices#
+	indices = 1:length(snps)#
+	train_index = sample(indices, round(length(snps)/2))#
+	test_index = indices[-train_index]#
+	#create directory for snp sets#
+	dir.create("./snp_sets", showWarnings = FALSE)#
+	setwd("./snp_sets")#
+	#write out training snps#
+	write.table(snps[train_index], "train", col.names = F, row.names = F, quote = F)#
+	#split the testing sets once more#
+	size = floor(length(test_index)/50)#
+	for(i in 1:num_test){#
+		#get the smaller snp_set#
+		small_snp_set = sample(test_index, size)#
+		#remove small_snp_set from test_index #
+		test_index = test_index[!test_index %in% small_snp_set]#
+		#write out small_snp_set#
+		file = paste("test",i, sep = "")#
+		write.table(small_snp_set, file, col.names = F, row.names = F, quote = F)#
+	}#
+	#go back a directory#
+	setwd("..")#
+	message("writting out grms - this may take a very long time...")#
+	#--------------------------------#
+	#Make training grms#
+	#--------------------------------#
+	#create directory for the new grms#
+	dir.create("./cv_grms", showWarnings = FALSE)#
+	#format snp file names#
+	snp_file = paste(getwd(), "/snp_sets/train", sep = "")#
+	out = paste(getwd(), "/cv_grms/train", sep = "")	#
+#
+	#make the call to gcta #
+	system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ", out, sep = ""))#
+	#--------------------------------#
+	#Make testing grms#
+	#--------------------------------#
+	for(i in 1:num_test){#
+		#format snp file names#
+		snp_file = paste(getwd(), "/snp_sets/test",i, sep = "")#
+		out = paste(getwd(), "/cv_grms/test",i, sep = "")	#
+		#make the call to gcta#
+		system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ",out,sep = ""))#
+	}#
+}
+treelet_prep_cv = funtion(grm_name, num_test = 50){#
+	#--------------------------------#
+	#Check for errors in the grm file#
+	#--------------------------------#
+	if(is.na(grm_name)){#
+		stop("please specify grm file name \n this should be in the current directory")#
+	}	#
+	#-------------------------------------------#
+	# read in SNP file #
+	#-------------------------------------------#
+	snp_name = paste(grm_name, ".bim", sep = "")#
+	snps = as.matrix(read.table(snp_name))[,2]#
+	if(!exists("snps")){#
+		stop("couldn't find the file")#
+	}#
+	#--------------------------------#
+	#Make training and testing sets#
+	#--------------------------------#
+	message("writting out testing/training sets")#
+	#get train/test indices#
+	indices = 1:length(snps)#
+	train_index = sample(indices, round(length(snps)/2))#
+	test_index = indices[-train_index]#
+	#create directory for snp sets#
+	dir.create("./snp_sets", showWarnings = FALSE)#
+	setwd("./snp_sets")#
+	#write out training snps#
+	write.table(snps[train_index], "train", col.names = F, row.names = F, quote = F)#
+	#split the testing sets once more#
+	size = floor(length(test_index)/50)#
+	for(i in 1:num_test){#
+		#get the smaller snp_set#
+		small_snp_set = sample(test_index, size)#
+		#remove small_snp_set from test_index #
+		test_index = test_index[!test_index %in% small_snp_set]#
+		#write out small_snp_set#
+		file = paste("test",i, sep = "")#
+		write.table(small_snp_set, file, col.names = F, row.names = F, quote = F)#
+	}#
+	#go back a directory#
+	setwd("..")#
+	message("writting out grms - this may take a very long time...")#
+	#--------------------------------#
+	#Make training grms#
+	#--------------------------------#
+	#create directory for the new grms#
+	dir.create("./cv_grms", showWarnings = FALSE)#
+	#format snp file names#
+	snp_file = paste(getwd(), "/snp_sets/train", sep = "")#
+	out = paste(getwd(), "/cv_grms/train", sep = "")	#
+#
+	#make the call to gcta #
+	system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ", out, sep = ""))#
+	#--------------------------------#
+	#Make testing grms#
+	#--------------------------------#
+	for(i in 1:num_test){#
+		#format snp file names#
+		snp_file = paste(getwd(), "/snp_sets/test",i, sep = "")#
+		out = paste(getwd(), "/cv_grms/test",i, sep = "")	#
+		#make the call to gcta#
+		system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ",out,sep = ""))#
+	}#
+}
+treelet_prep_cv = function(grm_name, num_test = 50){#
+	#--------------------------------#
+	#Check for errors in the grm file#
+	#--------------------------------#
+	if(is.na(grm_name)){#
+		stop("please specify grm file name \n this should be in the current directory")#
+	}	#
+	#-------------------------------------------#
+	# read in SNP file #
+	#-------------------------------------------#
+	snp_name = paste(grm_name, ".bim", sep = "")#
+	snps = as.matrix(read.table(snp_name))[,2]#
+	if(!exists("snps")){#
+		stop("couldn't find the file")#
+	}#
+	#--------------------------------#
+	#Make training and testing sets#
+	#--------------------------------#
+	message("writting out testing/training sets")#
+	#get train/test indices#
+	indices = 1:length(snps)#
+	train_index = sample(indices, round(length(snps)/2))#
+	test_index = indices[-train_index]#
+	#create directory for snp sets#
+	dir.create("./snp_sets", showWarnings = FALSE)#
+	setwd("./snp_sets")#
+	#write out training snps#
+	write.table(snps[train_index], "train", col.names = F, row.names = F, quote = F)#
+	#split the testing sets once more#
+	size = floor(length(test_index)/50)#
+	for(i in 1:num_test){#
+		#get the smaller snp_set#
+		small_snp_set = sample(test_index, size)#
+		#remove small_snp_set from test_index #
+		test_index = test_index[!test_index %in% small_snp_set]#
+		#write out small_snp_set#
+		file = paste("test",i, sep = "")#
+		write.table(small_snp_set, file, col.names = F, row.names = F, quote = F)#
+	}#
+	#go back a directory#
+	setwd("..")#
+	message("writting out grms - this may take a very long time...")#
+	#--------------------------------#
+	#Make training grms#
+	#--------------------------------#
+	#create directory for the new grms#
+	dir.create("./cv_grms", showWarnings = FALSE)#
+	#format snp file names#
+	snp_file = paste(getwd(), "/snp_sets/train", sep = "")#
+	out = paste(getwd(), "/cv_grms/train", sep = "")	#
+#
+	#make the call to gcta #
+	system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ", out, sep = ""))#
+	#--------------------------------#
+	#Make testing grms#
+	#--------------------------------#
+	for(i in 1:num_test){#
+		#format snp file names#
+		snp_file = paste(getwd(), "/snp_sets/test",i, sep = "")#
+		out = paste(getwd(), "/cv_grms/test",i, sep = "")	#
+		#make the call to gcta#
+		system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ",out,sep = ""))#
+	}#
+}
+setwd("~/Desktop/github/TreeletCovarianceSmoothers/")
+getwd()
+treelet_prepare_cv = function(grm_name, num_test = 50){#
+	#--------------------------------#
+	#Check for errors in the grm file#
+	#--------------------------------#
+	if(is.na(grm_name)){#
+		stop("please specify grm file name \n this should be in the current directory")#
+	}	#
+	#-------------------------------------------#
+	# read in SNP file #
+	#-------------------------------------------#
+	snp_name = paste(grm_name, ".bim", sep = "")#
+	snps = as.matrix(read.table(snp_name))[,2]#
+	if(!exists("snps")){#
+		stop("couldn't find the file")#
+	}#
+	#--------------------------------#
+	#Make training and testing sets#
+	#--------------------------------#
+	message("writting out testing/training sets")#
+	#get train/test indices#
+	indices = 1:length(snps)#
+	train_index = sample(indices, round(length(snps)/2))#
+	test_index = indices[-train_index]#
+	#create directory for snp sets#
+	dir.create("./snp_sets", showWarnings = FALSE)#
+	setwd("./snp_sets")#
+	#write out training snps#
+	write.table(snps[train_index], "train", col.names = F, row.names = F, quote = F)#
+	#split the testing sets once more#
+	size = floor(length(test_index)/50)#
+	for(i in 1:num_test){#
+		#get the smaller snp_set#
+		small_snp_set = sample(test_index, size)#
+		#remove small_snp_set from test_index #
+		test_index = test_index[!test_index %in% small_snp_set]#
+		#write out small_snp_set#
+		file = paste("test",i, sep = "")#
+		write.table(small_snp_set, file, col.names = F, row.names = F, quote = F)#
+	}#
+	#go back a directory#
+	setwd("..")#
+	message("writting out grms - this may take a very long time...")#
+	#--------------------------------#
+	#Make training grms#
+	#--------------------------------#
+	#create directory for the new grms#
+	dir.create("./cv_grms", showWarnings = FALSE)#
+	#format snp file names#
+	snp_file = paste(getwd(), "/snp_sets/train", sep = "")#
+	out = paste(getwd(), "/cv_grms/train", sep = "")	#
+#
+	#make the call to gcta #
+	system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ", out, sep = ""))#
+	#--------------------------------#
+	#Make testing grms#
+	#--------------------------------#
+	for(i in 1:num_test){#
+		#format snp file names#
+		snp_file = paste(getwd(), "/snp_sets/test",i, sep = "")#
+		out = paste(getwd(), "/cv_grms/test",i, sep = "")	#
+		#make the call to gcta#
+		system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ",out,sep = ""))#
+	}#
+}
+treelet_prepare_cv("test")
+ls()
+grm_name = "tset"
+grm_name = "test"
+num_test = 50
+if(is.na(grm_name)){#
+		stop("please specify grm file name \n this should be in the current directory")#
+	}	#
+	#-------------------------------------------#
+	# read in SNP file #
+	#-------------------------------------------#
+	snp_name = paste(grm_name, ".bim", sep = "")#
+	snps = as.matrix(read.table(snp_name))[,2]#
+	if(!exists("snps")){#
+		stop("couldn't find the file")#
+	}
+head(snps)
+treelet_prepare_cv = function(grm_name, num_test = 50){#
+	#--------------------------------#
+	#Check for errors in the grm file#
+	#--------------------------------#
+	if(is.na(grm_name)){#
+		stop("please specify grm file name \n this should be in the current directory")#
+	}	#
+	#-------------------------------------------#
+	# read in SNP file #
+	#-------------------------------------------#
+	snp_name = paste(grm_name, ".bim", sep = "")#
+	snps = as.matrix(read.table(snp_name))[,2]#
+	if(!exists("snps")){#
+		stop("couldn't find the file")#
+	}#
+	#--------------------------------#
+	#Make training and testing sets#
+	#--------------------------------#
+	message("writting out testing/training sets")#
+	#get train/test indices#
+	indices = 1:length(snps)#
+	train_index = sample(indices, round(length(snps)/2))#
+	test_index = indices[-train_index]#
+	#create directory for snp sets#
+	dir.create("./snp_sets", showWarnings = FALSE)#
+	setwd("./snp_sets")#
+	#write out training snps#
+	write.table(snps[train_index], "train", col.names = F, row.names = F, quote = F)#
+	#split the testing sets once more#
+	size = floor(length(test_index)/50)#
+	for(i in 1:num_test){#
+		#get the smaller snp_set#
+		small_snp_set = sample(test_index, size)#
+		#remove small_snp_set from test_index #
+		test_index = test_index[!test_index %in% small_snp_set]#
+		#write out small_snp_set#
+		file = paste("test",i, sep = "")#
+		write.table(snps[small_snp_set], file, col.names = F, row.names = F, quote = F)#
+	}#
+	#go back a directory#
+	setwd("..")#
+	message("writting out grms - this may take a very long time...")#
+	#--------------------------------#
+	#Make training grms#
+	#--------------------------------#
+	#create directory for the new grms#
+	dir.create("./cv_grms", showWarnings = FALSE)#
+	#format snp file names#
+	snp_file = paste(getwd(), "/snp_sets/train", sep = "")#
+	out = paste(getwd(), "/cv_grms/train", sep = "")	#
+#
+	#make the call to gcta #
+	system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ", out, sep = ""))#
+	#--------------------------------#
+	#Make testing grms#
+	#--------------------------------#
+	for(i in 1:num_test){#
+		#format snp file names#
+		snp_file = paste(getwd(), "/snp_sets/test",i, sep = "")#
+		out = paste(getwd(), "/cv_grms/test",i, sep = "")	#
+		#make the call to gcta#
+		system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ",out,sep = ""))#
+	}#
+}
+treelet_prepare_cv("test")
+treelet_prepare_cv = function(grm_name, num_test = 50, snp_set_size = NA){#
+	#--------------------------------#
+	#Check for errors in the grm file#
+	#--------------------------------#
+	if(is.na(grm_name)){#
+		stop("please specify grm file name \n this should be in the current directory")#
+	}	#
+	#-------------------------------------------#
+	# read in SNP file #
+	#-------------------------------------------#
+	snp_name = paste(grm_name, ".bim", sep = "")#
+	snps = as.matrix(read.table(snp_name))[,2]#
+	if(!exists("snps")){#
+		stop("couldn't find the file")#
+	}#
+	if(is.na(snp_set_size)){#
+		#include entire snp set #
+		snp_set_size = length(snps)#
+	}#
+	if(length(snps)<snp_set_size){#
+		message("snp_set_size is greater than the number of snps \n setting it to the max value")#
+		snp_set_size = length(snps)#
+	}#
+	snps = sample(snps, snp_set_size)#
+	#--------------------------------#
+	#Make training and testing sets#
+	#--------------------------------#
+	message("writting out testing/training sets")#
+	#get train/test indices#
+	indices = 1:length(snps)#
+	train_index = sample(indices, round(length(snps)/2))#
+	test_index = indices[-train_index]#
+	#create directory for snp sets#
+	dir.create("./snp_sets", showWarnings = FALSE)#
+	setwd("./snp_sets")#
+	#write out training snps#
+	write.table(snps[train_index], "train", col.names = F, row.names = F, quote = F)#
+	#split the testing sets once more#
+	size = floor(length(test_index)/50)#
+	for(i in 1:num_test){#
+		#get the smaller snp_set#
+		small_snp_set = sample(test_index, size)#
+		#remove small_snp_set from test_index #
+		test_index = test_index[!test_index %in% small_snp_set]#
+		#write out small_snp_set#
+		file = paste("test",i, sep = "")#
+		write.table(snps[small_snp_set], file, col.names = F, row.names = F, quote = F)#
+	}#
+	#go back a directory#
+	setwd("..")#
+	message("writting out grms - this may take a very long time...")#
+	#--------------------------------#
+	#Make training grms#
+	#--------------------------------#
+	#create directory for the new grms#
+	dir.create("./cv_grms", showWarnings = FALSE)#
+	#format snp file names#
+	snp_file = paste(getwd(), "/snp_sets/train", sep = "")#
+	out = paste(getwd(), "/cv_grms/train", sep = "")	#
+#
+	#make the call to gcta #
+	system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ", out, sep = ""))#
+	#--------------------------------#
+	#Make testing grms#
+	#--------------------------------#
+	for(i in 1:num_test){#
+		#format snp file names#
+		snp_file = paste(getwd(), "/snp_sets/test",i, sep = "")#
+		out = paste(getwd(), "/cv_grms/test",i, sep = "")	#
+		#make the call to gcta#
+		system(paste("./gcta_mac --bfile ",grm_name," --extract ",snp_file," --make-grm --out ",out,sep = ""))#
+	}#
+}
+treelet_prepare_cv("test")
+rm(list = ls())
+i = 1
+getwd()
+file = paste(getwd(),"/cv_grms/test", i, ".grm.gz"sep = "")
+file = paste(getwd(),"/cv_grms/test", i, ".grm.gz", sep = "")
+file
+temp = as.matrix(read.table(file, header = F))
+file
+setwd("./example_data_folder/")
+file = paste(getwd(),"/cv_grms/test", i, ".grm.gz", sep = "")
+file
+temp = as.matrix(read.table(file, header = F))
+head(temp)
+max(temp[,1])
+n
+file = paste(getwd(), "cv_grms/",train_grm_name, ".grm.gz", sep = "")
+train_grm_name = "test"
+file = paste(getwd(), "cv_grms/",train_grm_name, ".grm.gz", sep = "")
+file
+if(is.na(train_grm_name)){#
+		message("please specify grm file name \n this should be in the current directory")#
+		stop()#
+	}
+file = paste(getwd(), "cv_grms/",train_grm_name, ".grm.gz", sep = "")
+stacked_data = as.matrix(read.table(file), header = F)
+file
+file = paste(getwd(), "/cv_grms/",train_grm_name, ".grm.gz", sep = "")
+file
+train_grm_name = "train"
+file = paste(getwd(), "/cv_grms/train.grm.gz", sep = "")
+stacked_data = as.matrix(read.table(file), header = F)
+n = max(stacked_data[,1])
+n
+A = matrix(NA, nrow = n, ncol = n)
+A[stacked_data[,1:2]] = stacked_data[,4]
+A[stacked_data[,2:1]] = stacked_data[,4]
+file = paste(getwd(),"/cv_grms/test", i, ".grm.gz", sep = "")
+temp = as.matrix(read.table(file, header = F))
+A_l = matrix(NA,n,n)
+A_l[temp[,1:2]] = A_l[temp[,2:1]] = temp[,4]
+head(A_l)
+hist(A_l)
+hist(A_l, breaks = 200)
+#object to hold testing matrices#
+	testers = list()#
+#
+	for(i in 1:num_test){#
+		#Get the filename 		#
+		file = paste(getwd(),"/cv_grms/test", i, ".grm.gz", sep = "")#
+		#Read in and format as matrix #
+		temp = as.matrix(read.table(file, header = F))	#
+		A_l = matrix(NA,n,n)#
+		A_l[temp[,1:2]] = A_l[temp[,2:1]] = temp[,4]#
+		#add to the list#
+		testers[[i]] = A_l#
+	}
+num_test = 50
+#object to hold testing matrices#
+	testers = list()#
+#
+	for(i in 1:num_test){#
+		#Get the filename 		#
+		file = paste(getwd(),"/cv_grms/test", i, ".grm.gz", sep = "")#
+		#Read in and format as matrix #
+		temp = as.matrix(read.table(file, header = F))	#
+		A_l = matrix(NA,n,n)#
+		A_l[temp[,1:2]] = A_l[temp[,2:1]] = temp[,4]#
+		#add to the list#
+		testers[[i]] = A_l#
+	}
+length(testers)
+dim(testers[[1]])
+lev_set = 1:642
+as.characer(lev_set)
+as.character(lev_set)
+rownames(cost) = as.character(lam_set)
+lam_set = 1:10/10
+lam_set
+lam_set = 1:10/100
+lam_set
+rownames(cost) = as.character(lam_set)
+cost = matrix(NA, nrow = length(lev_set), ncol = length(lam_set))
+colnames(cost) = as.character(lev_set)
+rownames(cost) = as.character(lev_set)
+colnames(cost) = as.character(lam_set)
+cost
+sort(lam_set)
+if(no_cores > detectCores()){#
+		message("number of cores specified greater than total number of cores \n setting to no_cores - 1")#
+		no_cores = detectCores() - 1#
+	}
+no_cores = NA
+if(no_cores > detectCores()){#
+		message("number of cores specified greater than total number of cores \n setting to no_cores - 1")#
+		no_cores = detectCores() - 1#
+	}
+if(is.na(no_cores)){#
+		message("number of cores not specified \n setting to no_cores - 1")#
+		no_cores = detectCores() - 1#
+	}
+registerDoParallel(no_cores)
+library(doParallel)
+library(foreach)
+#-----------------------------------#
+	# Read in testing sets#
+	#-----------------------------------#
+	#object to hold testing matrices#
+	testers = list()#
+#
+	for(i in 1:num_test){#
+		#Get the filename 		#
+		file = paste(getwd(),"/cv_grms/test", i, ".grm.gz", sep = "")#
+		#Read in and format as matrix #
+		temp = as.matrix(read.table(file, header = F))	#
+		A_l = matrix(NA,n,n)#
+		A_l[temp[,1:2]] = A_l[temp[,2:1]] = temp[,4]#
+		#add to the list#
+		testers[[i]] = A_l#
+	}
+cost = matrix(NA, nrow = length(lev_set), ncol = length(lam_set))#
+	rownames(cost) = as.character(lev_set)#
+	colnames(cost) = as.character(lam_set)
+treetop = 100
+lev = 1
+#print out progress #
+		if(lev %% 100 == 0 ){#
+    			message(paste("Computing level:",lev))#
+    		}
+#mask_M <- matrix to find hightest pairwise relatedness#
+		mask_M = M#
+		#set non - applicable entries to -1  #
+		mask_M[upper.tri(M, diag = TRUE)] = mask_M[merged_indices, ] = mask_M[, merged_indices] = -1 #
+#
+		#find highest related pair #
+		alpha_beta = which(mask_M == max(mask_M), arr.ind = TRUE)[1,]#
+		#get relatedness submatrix #
+		sub_A = A[alpha_beta, alpha_beta]	#
+		#if they're unrelated, rotation angle = 0 #
+		#so no need to do local PCA  #
+		if(sub_A[1,2] == 0){#
+			#set up new variables#
+			rotated_A = A #
+			updated_M = M#
+			rotation = diag(c(1,1))#
+			theta = 0 #
+			index = c(1,2) #
+		#if they are related, find rotation angle #
+		#and complete local PCA 	#
+		}else{#
+			#get the angle #
+			theta = 1/2 * atan(2*sub_A[1,2]/(sub_A[1,1] - sub_A[2,2]))#
+			#find rotation matrix #
+			cs = cos(theta)#
+			sn = sin(theta)#
+			rotation = rbind(c(cs, -sn), c(sn, cs)) #
+			#rotate #
+			tempA = A #
+			tempA[alpha_beta,] = t(rotation) %*% A[alpha_beta,]#
+			A = tempA #
+			A[,alpha_beta] = tempA[,alpha_beta] %*% rotation#
+			#replace and update variables after rotation#
+			sub_A = A[alpha_beta, alpha_beta]#
+			index = c(sub_A[1,1], sub_A[2,2])#
+			index = sort.list(index, decreasing = TRUE)#
+			new_diag = diag(A)#
+			temp = sqrt(matrix(new_diag[alpha_beta], ncol = 1) %*% new_diag)#
+			temp = A[alpha_beta,]/temp#
+			#update similarity matrix #
+			M[alpha_beta,] = temp#
+			M[,alpha_beta] = t(temp)#
+		}#
+		#record which individuals were merged #
+		merges[lev, ] = alpha_beta[index]#
+		#order the PC indicies & store the cluster names#
+		princ_component_index = alpha_beta[index]#
+		clusters[princ_component_index] = cbind(n + lev, -(n+lev)) #
+		#update merged_indicies#
+		if(lev == 1){#
+			merged_indices = as.matrix(princ_component_index[2])#
+		} else{#
+			merged_indices = cbind(merged_indices,princ_component_index[2])#
+		}#
+		#record PC ratio#
+		pc_ratio[lev] =  A[princ_component_index[2], princ_component_index[2]]/A[princ_component_index[1], princ_component_index[1]]#
+		#record clusters total #
+		clusters_by_iteration[lev,] = clusters#
+		#update basis set#
+		tmp1 = basis[alpha_beta,]#
+		tmp2 = t(rotation) %*% tmp1 #
+		basis[alpha_beta,] = tmp2#
+		#-----------------------------------------------#
+		# Get cost if we're in the lev_set#
+		#-----------------------------------------------
+#-------------------------------------------#
+	#Format the GRM file -> relationship matrix  #
+	#-------------------------------------------#
+	file = paste(getwd(), "/cv_grms/train.grm.gz", sep = "")#
+	stacked_data = as.matrix(read.table(file), header = F)#
+	n = max(stacked_data[,1])#
+	A = matrix(NA, nrow = n, ncol = n)#
+	A[stacked_data[,1:2]] = stacked_data[,4]#
+	A[stacked_data[,2:1]] = stacked_data[,4]#
+#
+	#----------------------------------#
+	#Check errors in treetop #
+	#----------------------------------#
+#
+	if(is.na(treetop)){#
+		message("setting the tree level to the maximum possible value (n - 1)")#
+		treetop = n - 1#
+	}#
+	if(treetop > n-1){#
+		message("treetop is greater than the dimension of the relationship matrix. \n setting the tree level to the maximum possible value (n - 1)")#
+		treetop = n - 1#
+	}
+#-------------------------------------------#
+	# Initial correlation values#
+	#-------------------------------------------#
+	message("computing the correlation....")#
+	M = cov2cor(A)#
+	#-------------------------------------------#
+	# Initial looping variables#
+	#-------------------------------------------#
+	message("initializing looping variables....")#
+	clusters = 1:n#
+	merged_indices = matrix()#
+	pc_ratio = numeric(treetop)#
+	clusters_by_iteration = matrix(NA, nrow = treetop, ncol = n )#
+	basis = diag(rep(1,n))#
+	merges = matrix(NA, ncol = 2, nrow = treetop)	#
+	#-------------------------------------------#
+	# Set cost matrix#
+	#-------------------------------------------#
+	cost = matrix(NA, nrow = length(lev_set), ncol = length(lam_set))#
+	rownames(cost) = as.character(lev_set)#
+	colnames(cost) = as.character(lam_set)
+lev - 1
+lev
+#print out progress #
+		if(lev %% 100 == 0 ){#
+    		message(paste("Computing level:",lev))#
+    	}#
+		#mask_M <- matrix to find hightest pairwise relatedness#
+		mask_M = M#
+		#set non - applicable entries to -1  #
+		mask_M[upper.tri(M, diag = TRUE)] = mask_M[merged_indices, ] = mask_M[, merged_indices] = -1 #
+#
+		#find highest related pair #
+		alpha_beta = which(mask_M == max(mask_M), arr.ind = TRUE)[1,]#
+		#get relatedness submatrix #
+		sub_A = A[alpha_beta, alpha_beta]	#
+		#if they're unrelated, rotation angle = 0 #
+		#so no need to do local PCA  #
+		if(sub_A[1,2] == 0){#
+			#set up new variables#
+			rotated_A = A #
+			updated_M = M#
+			rotation = diag(c(1,1))#
+			theta = 0 #
+			index = c(1,2) #
+		#if they are related, find rotation angle #
+		#and complete local PCA 	#
+		}else{#
+			#get the angle #
+			theta = 1/2 * atan(2*sub_A[1,2]/(sub_A[1,1] - sub_A[2,2]))#
+			#find rotation matrix #
+			cs = cos(theta)#
+			sn = sin(theta)#
+			rotation = rbind(c(cs, -sn), c(sn, cs)) #
+			#rotate #
+			tempA = A #
+			tempA[alpha_beta,] = t(rotation) %*% A[alpha_beta,]#
+			A = tempA #
+			A[,alpha_beta] = tempA[,alpha_beta] %*% rotation#
+			#replace and update variables after rotation#
+			sub_A = A[alpha_beta, alpha_beta]#
+			index = c(sub_A[1,1], sub_A[2,2])#
+			index = sort.list(index, decreasing = TRUE)#
+			new_diag = diag(A)#
+			temp = sqrt(matrix(new_diag[alpha_beta], ncol = 1) %*% new_diag)#
+			temp = A[alpha_beta,]/temp#
+			#update similarity matrix #
+			M[alpha_beta,] = temp#
+			M[,alpha_beta] = t(temp)#
+		}#
+		#record which individuals were merged #
+		merges[lev, ] = alpha_beta[index]#
+		#order the PC indicies & store the cluster names#
+		princ_component_index = alpha_beta[index]#
+		clusters[princ_component_index] = cbind(n + lev, -(n+lev)) #
+		#update merged_indicies#
+		if(lev == 1){#
+			merged_indices = as.matrix(princ_component_index[2])#
+		} else{#
+			merged_indices = cbind(merged_indices,princ_component_index[2])#
+		}#
+		#record PC ratio#
+		pc_ratio[lev] =  A[princ_component_index[2], princ_component_index[2]]/A[princ_component_index[1], princ_component_index[1]]#
+		#record clusters total #
+		clusters_by_iteration[lev,] = clusters#
+		#update basis set#
+		tmp1 = basis[alpha_beta,]#
+		tmp2 = t(rotation) %*% tmp1 #
+		basis[alpha_beta,] = tmp2
+#format the basis sets/sum_indices
+V = t(basis)
+G = as.matrix(A)
+sum_indices = which(clusters>0)
+lam = 0.01
+G_thres = G
+G_thres[which(G_thres < lam)] = 0
+hist(G_thres)
+hist(G_thres, breaks = 100)
+A_til = V[,indices]%*%G_thres[indices,indices]%*%t(G_thres[,indices])
+A_til = V[,sum_indices]%*%G_thres[sum_indices,sum_indices]%*%t(G_thres[,sum_indices])
+foreach(test in testers, .combine = "+")%dopar%{#
+					sum(abs(G[lower.tri(G)]) * (test[lower.tri(test)] - A_til[lower.tri(A_til)])^2)#
+				}
+i = 1
+test = testers[[i]]
+foreach(i=1:num_test, .combine = "+")%dopar%{#
+					test = testers[[i]]#
+					sum(abs(G[lower.tri(G)]) * (test[lower.tri(test)] - A_til[lower.tri(A_til)])^2)#
+				}
+registerDoParallel(no_cores)
+foreach(i=1:num_test, .combine = "+")%dopar%{#
+					test = testers[[i]]#
+					sum(abs(G[lower.tri(G)]) * (test[lower.tri(test)] - A_til[lower.tri(A_til)])^2)#
+				}
+cl = makeCluster(no_cores)
+cl = makeCluster(3)
+no_cores
+if(is.na(no_cores)){#
+		message("number of cores not specified \n setting to no_cores - 1")#
+		no_cores = detectCores() - 1#
+	}
+no_cores
+cl = makeCluster(no_cores)
+cl
+registerDoParallel(cl)
+foreach(i=1:num_test, .combine = "+")%dopar%{#
+					test = testers[[i]]#
+					sum(abs(G[lower.tri(G)]) * (test[lower.tri(test)] - A_til[lower.tri(A_til)])^2)#
+				}
+lam
+which(as.numeric(colnames(cost)) == lam)
+which(as.numeric(colnames(cost)) == lev)
+lev
+lev_set
+as.numeric(colnames(cost))
+which(as.numeric(rownames(cost)) == lev)
+treelet_cost = function(lev_set = NA, lam_set = NA, num_test = 50, no_cores = NA){#
+	#-------------------------------------------#
+	#Format the GRM file -> relationship matrix  #
+	#-------------------------------------------#
+	file = paste(getwd(), "/cv_grms/train.grm.gz", sep = "")#
+	stacked_data = as.matrix(read.table(file), header = F)#
+	n = max(stacked_data[,1])#
+	A = matrix(NA, nrow = n, ncol = n)#
+	A[stacked_data[,1:2]] = stacked_data[,4]#
+	A[stacked_data[,2:1]] = stacked_data[,4]#
+#
+	#----------------------------------#
+	#Check errors in treetop #
+	#----------------------------------#
+#
+	if(is.na(treetop)){#
+		message("setting the tree level to the maximum possible value (n - 1)")#
+		treetop = n - 1#
+	}#
+	if(treetop > n-1){#
+		message("treetop is greater than the dimension of the relationship matrix. \n setting the tree level to the maximum possible value (n - 1)")#
+		treetop = n - 1#
+	}#
+	#--------------------------------#
+	# Set number of cores to use#
+	#--------------------------------#
+	if(no_cores > detectCores()){#
+		message("number of cores specified greater than total number of cores \n setting to no_cores - 1")#
+		no_cores = detectCores() - 1#
+	}#
+	if(is.na(no_cores)){#
+		message("number of cores not specified \n setting to no_cores - 1")#
+		no_cores = detectCores() - 1#
+	}	#
+	cl = makeCluster(no_cores)#
+	registerDoParallel(cl)#
+	#-----------------------------------#
+	# Read in testing sets#
+	#-----------------------------------#
+	#object to hold testing matrices#
+	testers = list()#
+#
+	for(i in 1:num_test){#
+		#Get the filename 		#
+		file = paste(getwd(),"/cv_grms/test", i, ".grm.gz", sep = "")#
+		#Read in and format as matrix #
+		temp = as.matrix(read.table(file, header = F))	#
+		A_l = matrix(NA,n,n)#
+		A_l[temp[,1:2]] = A_l[temp[,2:1]] = temp[,4]#
+		#add to the list#
+		testers[[i]] = A_l#
+	}#
+	#-------------------------------------------#
+	# Initial correlation values#
+	#-------------------------------------------#
+	message("computing the correlation....")#
+	M = cov2cor(A)#
+	#-------------------------------------------#
+	# Initial looping variables#
+	#-------------------------------------------#
+	message("initializing looping variables....")#
+	clusters = 1:n#
+	merged_indices = matrix()#
+	pc_ratio = numeric(treetop)#
+	clusters_by_iteration = matrix(NA, nrow = treetop, ncol = n )#
+	basis = diag(rep(1,n))#
+	merges = matrix(NA, ncol = 2, nrow = treetop)	#
+	#-------------------------------------------#
+	# Set cost matrix#
+	#-------------------------------------------#
+	cost = matrix(NA, nrow = length(lev_set), ncol = length(lam_set))#
+	rownames(cost) = as.character(lev_set)#
+	colnames(cost) = as.character(lam_set)	#
+	#-------------------------------------------#
+	# Begin iterative procedure #
+	#-------------------------------------------#
+	for(lev in 1:treetop){#
+		#print out progress #
+		if(lev %% 100 == 0 ){#
+    		message(paste("Computing level:",lev))#
+    	}#
+		#mask_M <- matrix to find hightest pairwise relatedness#
+		mask_M = M#
+		#set non - applicable entries to -1  #
+		mask_M[upper.tri(M, diag = TRUE)] = mask_M[merged_indices, ] = mask_M[, merged_indices] = -1 #
+#
+		#find highest related pair #
+		alpha_beta = which(mask_M == max(mask_M), arr.ind = TRUE)[1,]#
+		#get relatedness submatrix #
+		sub_A = A[alpha_beta, alpha_beta]	#
+		#if they're unrelated, rotation angle = 0 #
+		#so no need to do local PCA  #
+		if(sub_A[1,2] == 0){#
+			#set up new variables#
+			rotated_A = A #
+			updated_M = M#
+			rotation = diag(c(1,1))#
+			theta = 0 #
+			index = c(1,2) #
+		#if they are related, find rotation angle #
+		#and complete local PCA 	#
+		}else{#
+			#get the angle #
+			theta = 1/2 * atan(2*sub_A[1,2]/(sub_A[1,1] - sub_A[2,2]))#
+			#find rotation matrix #
+			cs = cos(theta)#
+			sn = sin(theta)#
+			rotation = rbind(c(cs, -sn), c(sn, cs)) #
+			#rotate #
+			tempA = A #
+			tempA[alpha_beta,] = t(rotation) %*% A[alpha_beta,]#
+			A = tempA #
+			A[,alpha_beta] = tempA[,alpha_beta] %*% rotation#
+			#replace and update variables after rotation#
+			sub_A = A[alpha_beta, alpha_beta]#
+			index = c(sub_A[1,1], sub_A[2,2])#
+			index = sort.list(index, decreasing = TRUE)#
+			new_diag = diag(A)#
+			temp = sqrt(matrix(new_diag[alpha_beta], ncol = 1) %*% new_diag)#
+			temp = A[alpha_beta,]/temp#
+			#update similarity matrix #
+			M[alpha_beta,] = temp#
+			M[,alpha_beta] = t(temp)#
+		}#
+		#record which individuals were merged #
+		merges[lev, ] = alpha_beta[index]#
+		#order the PC indicies & store the cluster names#
+		princ_component_index = alpha_beta[index]#
+		clusters[princ_component_index] = cbind(n + lev, -(n+lev)) #
+		#update merged_indicies#
+		if(lev == 1){#
+			merged_indices = as.matrix(princ_component_index[2])#
+		} else{#
+			merged_indices = cbind(merged_indices,princ_component_index[2])#
+		}#
+		#record PC ratio#
+		pc_ratio[lev] =  A[princ_component_index[2], princ_component_index[2]]/A[princ_component_index[1], princ_component_index[1]]#
+		#record clusters total #
+		clusters_by_iteration[lev,] = clusters#
+		#update basis set#
+		tmp1 = basis[alpha_beta,]#
+		tmp2 = t(rotation) %*% tmp1 #
+		basis[alpha_beta,] = tmp2#
+		#-----------------------------------------------#
+		# Get cost if we're in the lev_set#
+		#-----------------------------------------------#
+		if(lev %in% lev_set){#
+			#format the basis sets/sum_indices#
+			V = t(basis)#
+			G = as.matrix(A)#
+			sum_indices = which(clusters>0)#
+			#loop over lam_set#
+			for(lam in lam_set){#
+				#thresholding...#
+				G_thres = G#
+				G_thres[which(G_thres < lam)] = 0 #
+				#get the smoothed matrix #
+				if(lev == n-1){#
+					A_til = V[,indices]%*%(as.matrix(G_thres[indices,indices]*t(V[,indices])))#
+				}else{#
+	    			A_til = V[,sum_indices]%*%G_thres[sum_indices,sum_indices]%*%t(G_thres[,sum_indices])#
+				}#
+				#multiprocessing to get cost at this level#
+				result = foreach(i=1:num_test, .combine = "+")%dopar%{#
+					#get cost #
+					test = testers[[i]]#
+					cost.here = sum(abs(G[lower.tri(G)]) * (test[lower.tri(test)] - A_til[lower.tri(A_til)])^2)#
+					#return it here#
+					return(cost.here)#
+				}#
+				#fill the cost matrix #
+				cost[which(as.numeric(rownames(cost)) == lev), which(as.numeric(colnames(cost)) == lam)] = result#
+			}#
+		}#
+	}#
+}
+setwd("./exa")
+getwd()
+treelet_cost(1:642, lam_set = 1:10/100)
+treelet_cost = function(lev_set = NA, lam_set = NA, num_test = 50, no_cores = NA){#
+	#-------------------------------------------#
+	#Format the GRM file -> relationship matrix  #
+	#-------------------------------------------#
+	file = paste(getwd(), "/cv_grms/train.grm.gz", sep = "")#
+	stacked_data = as.matrix(read.table(file), header = F)#
+	n = max(stacked_data[,1])#
+	A = matrix(NA, nrow = n, ncol = n)#
+	A[stacked_data[,1:2]] = stacked_data[,4]#
+	A[stacked_data[,2:1]] = stacked_data[,4]#
+#
+	#----------------------------------#
+	#Check errors in treetop #
+	#----------------------------------#
+#
+	if(is.na(treetop)){#
+		message("setting the tree level to the maximum possible value (n - 1)")#
+		treetop = n - 1#
+	}#
+	if(treetop > n-1){#
+		message("treetop is greater than the dimension of the relationship matrix. \n setting the tree level to the maximum possible value (n - 1)")#
+		treetop = n - 1#
+	}#
+	#--------------------------------#
+	# Set number of cores to use#
+	#--------------------------------#
+	if(is.na(no_cores)){#
+		message("number of cores not specified \n setting to no_cores - 1")#
+		no_cores = detectCores() - 1#
+	}	#
+	if(no_cores > detectCores()){#
+		message("number of cores specified greater than total number of cores \n setting to no_cores - 1")#
+		no_cores = detectCores() - 1#
+	}#
+	#set up a cluster#
+	cl = makeCluster(no_cores)#
+	registerDoParallel(cl)#
+	#-----------------------------------#
+	# Read in testing sets#
+	#-----------------------------------#
+	#object to hold testing matrices#
+	testers = list()#
+#
+	for(i in 1:num_test){#
+		#Get the filename 		#
+		file = paste(getwd(),"/cv_grms/test", i, ".grm.gz", sep = "")#
+		#Read in and format as matrix #
+		temp = as.matrix(read.table(file, header = F))	#
+		A_l = matrix(NA,n,n)#
+		A_l[temp[,1:2]] = A_l[temp[,2:1]] = temp[,4]#
+		#add to the list#
+		testers[[i]] = A_l#
+	}#
+	#-------------------------------------------#
+	# Initial correlation values#
+	#-------------------------------------------#
+	message("computing the correlation....")#
+	M = cov2cor(A)#
+	#-------------------------------------------#
+	# Initial looping variables#
+	#-------------------------------------------#
+	message("initializing looping variables....")#
+	clusters = 1:n#
+	merged_indices = matrix()#
+	pc_ratio = numeric(treetop)#
+	clusters_by_iteration = matrix(NA, nrow = treetop, ncol = n )#
+	basis = diag(rep(1,n))#
+	merges = matrix(NA, ncol = 2, nrow = treetop)	#
+	#-------------------------------------------#
+	# Set cost matrix#
+	#-------------------------------------------#
+	cost = matrix(NA, nrow = length(lev_set), ncol = length(lam_set))#
+	rownames(cost) = as.character(lev_set)#
+	colnames(cost) = as.character(lam_set)	#
+	#-------------------------------------------#
+	# Begin iterative procedure #
+	#-------------------------------------------#
+	for(lev in 1:treetop){#
+		#print out progress #
+		if(lev %% 100 == 0 ){#
+    		message(paste("Computing level:",lev))#
+    	}#
+		#mask_M <- matrix to find hightest pairwise relatedness#
+		mask_M = M#
+		#set non - applicable entries to -1  #
+		mask_M[upper.tri(M, diag = TRUE)] = mask_M[merged_indices, ] = mask_M[, merged_indices] = -1 #
+#
+		#find highest related pair #
+		alpha_beta = which(mask_M == max(mask_M), arr.ind = TRUE)[1,]#
+		#get relatedness submatrix #
+		sub_A = A[alpha_beta, alpha_beta]	#
+		#if they're unrelated, rotation angle = 0 #
+		#so no need to do local PCA  #
+		if(sub_A[1,2] == 0){#
+			#set up new variables#
+			rotated_A = A #
+			updated_M = M#
+			rotation = diag(c(1,1))#
+			theta = 0 #
+			index = c(1,2) #
+		#if they are related, find rotation angle #
+		#and complete local PCA 	#
+		}else{#
+			#get the angle #
+			theta = 1/2 * atan(2*sub_A[1,2]/(sub_A[1,1] - sub_A[2,2]))#
+			#find rotation matrix #
+			cs = cos(theta)#
+			sn = sin(theta)#
+			rotation = rbind(c(cs, -sn), c(sn, cs)) #
+			#rotate #
+			tempA = A #
+			tempA[alpha_beta,] = t(rotation) %*% A[alpha_beta,]#
+			A = tempA #
+			A[,alpha_beta] = tempA[,alpha_beta] %*% rotation#
+			#replace and update variables after rotation#
+			sub_A = A[alpha_beta, alpha_beta]#
+			index = c(sub_A[1,1], sub_A[2,2])#
+			index = sort.list(index, decreasing = TRUE)#
+			new_diag = diag(A)#
+			temp = sqrt(matrix(new_diag[alpha_beta], ncol = 1) %*% new_diag)#
+			temp = A[alpha_beta,]/temp#
+			#update similarity matrix #
+			M[alpha_beta,] = temp#
+			M[,alpha_beta] = t(temp)#
+		}#
+		#record which individuals were merged #
+		merges[lev, ] = alpha_beta[index]#
+		#order the PC indicies & store the cluster names#
+		princ_component_index = alpha_beta[index]#
+		clusters[princ_component_index] = cbind(n + lev, -(n+lev)) #
+		#update merged_indicies#
+		if(lev == 1){#
+			merged_indices = as.matrix(princ_component_index[2])#
+		} else{#
+			merged_indices = cbind(merged_indices,princ_component_index[2])#
+		}#
+		#record PC ratio#
+		pc_ratio[lev] =  A[princ_component_index[2], princ_component_index[2]]/A[princ_component_index[1], princ_component_index[1]]#
+		#record clusters total #
+		clusters_by_iteration[lev,] = clusters#
+		#update basis set#
+		tmp1 = basis[alpha_beta,]#
+		tmp2 = t(rotation) %*% tmp1 #
+		basis[alpha_beta,] = tmp2#
+		#-----------------------------------------------#
+		# Get cost if we're in the lev_set#
+		#-----------------------------------------------#
+		if(lev %in% lev_set){#
+			#format the basis sets/sum_indices#
+			V = t(basis)#
+			G = as.matrix(A)#
+			sum_indices = which(clusters>0)#
+			#loop over lam_set#
+			for(lam in lam_set){#
+				#thresholding...#
+				G_thres = G#
+				G_thres[which(G_thres < lam)] = 0 #
+				#get the smoothed matrix #
+				if(lev == n-1){#
+					A_til = V[,indices]%*%(as.matrix(G_thres[indices,indices]*t(V[,indices])))#
+				}else{#
+	    			A_til = V[,sum_indices]%*%G_thres[sum_indices,sum_indices]%*%t(G_thres[,sum_indices])#
+				}#
+				#multiprocessing to get cost at this level#
+				result = foreach(i=1:num_test, .combine = "+")%dopar%{#
+					#get cost #
+					test = testers[[i]]#
+					cost.here = sum(abs(G[lower.tri(G)]) * (test[lower.tri(test)] - A_til[lower.tri(A_til)])^2)#
+					#return it here#
+					return(cost.here)#
+				}#
+				#fill the cost matrix #
+				cost[which(as.numeric(rownames(cost)) == lev), which(as.numeric(colnames(cost)) == lam)] = result#
+			}#
+		}#
+	}#
+}
+treelet_cost(1:642, lam_set = 1:10/100)
