@@ -223,8 +223,10 @@ treelet_cost = function(lev_set = NA, lam_set = seq(0,.1, .01), num_test = 50, n
 				
 				#get the smoothed matrix 
 				if(lev == n-1){
-					A_til = V[,sum_indices]%*%(as.matrix(G_thres[sum_indices,sum_indices]*t(V[,sum_indices])))
+					#project onto full basis set
+					A_til = V%*%(as.matrix(G_thres*t(V)))
 				}else{
+					#project onto sum indicies only! 
 	    			A_til = V[,sum_indices]%*%G_thres[sum_indices,sum_indices]%*%t(G_thres[,sum_indices])
 				}
 				
