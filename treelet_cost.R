@@ -17,9 +17,11 @@ treelet_cost = function(lev_set = NA, lam_set = seq(0,.1, .01), num_test = 50, n
 	#Format lev set  
 	#-------------------------------------------
 	
-	if(is.na(lev_set)){
-		message("setting lev_set to max height")
-		lev_set = c(n-1)
+	if(length(lev_set) == 1){
+		 if(is.na(lev_set)){
+		 	message("setting lev_set to max height")
+			lev_set = c(n-1)	
+		 }
 	}
 
 	#set treetop
