@@ -25,7 +25,6 @@ treelet_cost = function(lev_set = NA, lam_set = seq(0,.1, .01), num_test = 50, n
 	#set treetop
 	treetop = max(lev_set)
 
-
 	#----------------------------------
 	#Check errors in treetop 
 	#----------------------------------
@@ -79,8 +78,6 @@ treelet_cost = function(lev_set = NA, lam_set = seq(0,.1, .01), num_test = 50, n
 		testers[[i]] = A_l
 		
 	}
-
-	
 
 	#-------------------------------------------
 	# Initial correlation values
@@ -221,6 +218,7 @@ treelet_cost = function(lev_set = NA, lam_set = seq(0,.1, .01), num_test = 50, n
 				G_thres = G
 				G_thres[which(G_thres < lam)] = 0 
 				
+				
 				#get the smoothed matrix 
 				if(lev == n-1){
 					#project onto full basis set
@@ -252,6 +250,8 @@ treelet_cost = function(lev_set = NA, lam_set = seq(0,.1, .01), num_test = 50, n
 		
 	}
 	
+	#close the cluster
+	stopCluster(cl)
 	
 
 	#-----------------------------------------------
