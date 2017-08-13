@@ -35,7 +35,6 @@ treelet_prepare_cv = function(grm_name, num_test = 50, snp_set_size = NA){
 	snps = sample(snps, snp_set_size)
 	
 	
-	
 	#--------------------------------
 	#Make training and testing sets
 	#--------------------------------
